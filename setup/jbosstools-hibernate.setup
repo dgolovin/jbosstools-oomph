@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<setup:Project
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:git="http://www.eclipse.org/oomph/setup/git/1.0"
+    xmlns:predicates="http://www.eclipse.org/oomph/predicates/1.0"
+    xmlns:projects="http://www.eclipse.org/oomph/setup/projects/1.0"
+    xmlns:setup="http://www.eclipse.org/oomph/setup/1.0"
+    xmlns:setup.p2="http://www.eclipse.org/oomph/setup/p2/1.0"
+    xmlns:setup.workingsets="http://www.eclipse.org/oomph/setup/workingsets/1.0"
+    xsi:schemaLocation="http://www.eclipse.org/oomph/setup/git/1.0 http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/models/Git.ecore http://www.eclipse.org/oomph/predicates/1.0 http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/models/Predicates.ecore http://www.eclipse.org/oomph/setup/projects/1.0 http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/models/Projects.ecore http://www.eclipse.org/oomph/setup/workingsets/1.0 http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/models/SetupWorkingSets.ecore"
+    name="org.tools.hibernate"
+    label="JBoss Tools Hibernate">
+  <setupTask
+      xsi:type="setup:VariableTask"
+      name="workspace.location"
+      label="Workspace location rule">
+    <choice
+        value="${installation.location/ws}"
+        label="Located in a folder named 'ws' within the installation folder"/>
+    <description>The rule for the absolute folder location where the workspace is located</description>
+  </setupTask>
+  <setupTask
+      xsi:type="setup.p2:P2Task">
+    <requirement
+        name="org.eclipse.m2e.feature.feature.group"/>
+    <requirement
+        name="org.eclipse.wst.xml_ui.feature.feature.group"/>
+    <repository
+        url="http://download.eclipse.org/releases/mars"/>
+  </setupTask>
+  <stream name="master">
+    <setupTask
+        xsi:type="git:GitCloneTask"
+        id="jbt.tp.gitclone"
+        remoteURI="git://github.com/jbosstools/jbosstools-target-platforms.git"
+        checkoutBranch="4.50.x"/>
+    <setupTask
+        xsi:type="projects:ProjectsImportTask">
+      <sourceLocator
+          rootFolder="${jbt.tp.gitclone.location}/jbosstools/multiple"
+          locateNestedProjects="true"/>
+    </setupTask>
+    <setupTask
+        xsi:type="setup.workingsets:WorkingSetTask">
+      <workingSet
+          name="target-platform">
+        <predicate
+            xsi:type="predicates:LocationPredicate"
+            pattern="*/jbosstools-target-platforms/*"/>
+      </workingSet>
+    </setupTask>
+    <setupTask
+        xsi:type="setup:PreferenceTask"
+        id="api.pref.init"
+        key="instance/org.eclipse.pde.api.tools/missing_default_api_profile"
+        value="Ignore"/>
+    <setupTask
+        xsi:type="setup:PreferenceTask"
+        id="tp.preference.init"
+        key="instance/org.eclipse.pde.core/workspace_target_handle"
+        value="resource:/target-platform.jbosstools.multiple/jbosstools-multiple.target"/>
+    <setupTask
+        xsi:type="git:GitCloneTask"
+        id="jbt.base.gitclone"
+        remoteURI="git://github.com/jbosstools/jbosstools-base.git"
+        pushURI=""/>
+    <setupTask
+        xsi:type="projects:ProjectsImportTask">
+      <sourceLocator
+          rootFolder="${jbt.base.gitclone.location}"
+          locateNestedProjects="true"/>
+    </setupTask>
+    <setupTask
+        xsi:type="setup.workingsets:WorkingSetTask">
+      <workingSet
+          name="base"
+          id="">
+        <predicate
+            xsi:type="predicates:LocationPredicate"
+            pattern="*/jbosstools-base/*"/>
+      </workingSet>
+    </setupTask>
+    <setupTask
+        xsi:type="git:GitCloneTask"
+        id="jbt.hibernate.gitclone"
+        remoteURI="git://github.com/jbosstools/jbosstools-hibernate.git"
+        pushURI=""/>
+    <setupTask
+        xsi:type="projects:ProjectsImportTask">
+      <sourceLocator
+          rootFolder="${jbt.hibernate.gitclone.location}"
+          locateNestedProjects="true"/>
+    </setupTask>
+    <setupTask
+        xsi:type="setup.workingsets:WorkingSetTask">
+      <workingSet
+          name="hibernate">
+        <predicate
+            xsi:type="predicates:LocationPredicate"
+            pattern="*/jbosstools-hibernate/*"/>
+      </workingSet>
+    </setupTask>
+  </stream>
+  <logicalProjectContainer
+      xsi:type="setup:ProjectCatalog"
+      href="index:/org.eclipse.setup#//@projectCatalogs[name='org.eclipse']"/>
+  <description>JBoss Tools Hibernate provides cool stuff</description>
+</setup:Project>
