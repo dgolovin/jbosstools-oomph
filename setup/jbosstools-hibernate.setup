@@ -48,7 +48,7 @@
           name="target-platform">
         <predicate
             xsi:type="predicates:LocationPredicate"
-            pattern="*/jbosstools-target-platforms/*"/>
+            pattern=".*/jbosstools-target-platforms/.*"/>
       </workingSet>
     </setupTask>
     <setupTask
@@ -79,7 +79,7 @@
           id="">
         <predicate
             xsi:type="predicates:LocationPredicate"
-            pattern="*/jbosstools-base/*"/>
+            pattern=".*/jbosstools-base/.*"/>
       </workingSet>
     </setupTask>
     <setupTask
@@ -99,7 +99,7 @@
           name="hibernate">
         <predicate
             xsi:type="predicates:LocationPredicate"
-            pattern="*/jbosstools-hibernate/*"/>
+            pattern=".*/jbosstools-hibernate/.*"/>
       </workingSet>
     </setupTask>
   </stream>
