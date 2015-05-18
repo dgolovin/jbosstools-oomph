@@ -6,35 +6,35 @@
     name="index"
     label="Index">
   <discoverablePackage
-      href="models/Git.ecore#/"/>
+      href="http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/models/Git.ecore#/"/>
   <discoverablePackage
-      href="models/Launching.ecore#/"/>
+      href="http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/models/Launching.ecore#/"/>
   <discoverablePackage
-      href="models/JDT.ecore#/"/>
+      href="http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/models/JDT.ecore#/"/>
   <discoverablePackage
-      href="models/Maven.ecore#/"/>
+      href="http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/models/Maven.ecore#/"/>
   <discoverablePackage
-      href="models/Mylyn.ecore#/"/>
+      href="http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/models/Mylyn.ecore#/"/>
   <discoverablePackage
-      href="models/PDE.ecore#/"/>
+      href="http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/models/PDE.ecore#/"/>
   <discoverablePackage
-      href="models/Predicates.ecore#/"/>
+      href="http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/models/Predicates.ecore#/"/>
   <discoverablePackage
-      href="models/Projects.ecore#/"/>
+      href="http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/models/Projects.ecore#/"/>
   <discoverablePackage
-      href="models/ProjectSet.ecore#/"/>
+      href="http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/models/ProjectSet.ecore#/"/>
   <discoverablePackage
-      href="models/Resources.ecore#/"/>
+      href="http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/models/Resources.ecore#/"/>
   <discoverablePackage
-      href="models/SetupTarglets.ecore#/"/>
+      href="http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/models/SetupTarglets.ecore#/"/>
   <discoverablePackage
-      href="models/SetupWorkingSets.ecore#/"/>
+      href="http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/models/SetupWorkingSets.ecore#/"/>
   <discoverablePackage
-      href="models/Targlets.ecore#/"/>
+      href="http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/models/Targlets.ecore#/"/>
   <discoverablePackage
-      href="models/Workbench.ecore#/"/>
+      href="http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/models/Workbench.ecore#/"/>
   <discoverablePackage
-      href="models/WorkingSets.ecore#/"/>
+      href="http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/models/WorkingSets.ecore#/"/>
   <productCatalog
       href="catalog:/self-product-catalog.setup#/"/>
   <productCatalog
