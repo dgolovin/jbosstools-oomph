@@ -4,13 +4,14 @@
     xmlns:xmi="http://www.omg.org/XMI"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:git="http://www.eclipse.org/oomph/setup/git/1.0"
+    xmlns:maven="http://www.eclipse.org/oomph/setup/maven/1.0"
     xmlns:pde="http://www.eclipse.org/oomph/setup/pde/1.0"
     xmlns:predicates="http://www.eclipse.org/oomph/predicates/1.0"
     xmlns:projects="http://www.eclipse.org/oomph/setup/projects/1.0"
     xmlns:setup="http://www.eclipse.org/oomph/setup/1.0"
     xmlns:setup.p2="http://www.eclipse.org/oomph/setup/p2/1.0"
     xmlns:setup.workingsets="http://www.eclipse.org/oomph/setup/workingsets/1.0"
-    xsi:schemaLocation="http://www.eclipse.org/oomph/setup/git/1.0 http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/models/Git.ecore http://www.eclipse.org/oomph/setup/pde/1.0 http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/models/PDE.ecore http://www.eclipse.org/oomph/predicates/1.0 http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/models/Predicates.ecore http://www.eclipse.org/oomph/setup/projects/1.0 http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/models/Projects.ecore http://www.eclipse.org/oomph/setup/workingsets/1.0 http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/models/SetupWorkingSets.ecore"
+    xsi:schemaLocation="http://www.eclipse.org/oomph/setup/git/1.0 http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/models/Git.ecore http://www.eclipse.org/oomph/setup/maven/1.0 http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/models/Maven.ecore http://www.eclipse.org/oomph/setup/pde/1.0 http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/models/PDE.ecore http://www.eclipse.org/oomph/predicates/1.0 http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/models/Predicates.ecore http://www.eclipse.org/oomph/setup/projects/1.0 http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/models/Projects.ecore http://www.eclipse.org/oomph/setup/workingsets/1.0 http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/models/SetupWorkingSets.ecore"
     name="org.tools.hibernate"
     label="JBoss Tools Hibernate">
   <setupTask
@@ -54,22 +55,10 @@
             locateNestedProjects="true"/>
       </setupTask>
       <setupTask
-          xsi:type="setup.workingsets:WorkingSetTask">
-        <workingSet
-            name="target-platform">
-          <predicate
-              xsi:type="predicates:LocationPredicate"
-              pattern=".*/jbosstools-target-platforms/.*"/>
-        </workingSet>
-      </setupTask>
-      <setupTask
           xsi:type="setup:PreferenceTask"
           id="api.pref.init"
           key="instance/org.eclipse.pde.api.tools/missing_default_api_profile"
           value="Ignore"/>
-      <setupTask
-          xsi:type="pde:TargetPlatformTask"
-          name="jbosstoolstarget-4.50.0.Beta1-SNAPSHOT"/>
     </setupTask>
     <setupTask
         xsi:type="setup:CompoundTask"
@@ -82,17 +71,14 @@
       <setupTask
           xsi:type="projects:ProjectsImportTask">
         <sourceLocator
-            rootFolder="${jbt.build.gitclone.location}/"/>
-      </setupTask>
-      <setupTask
-          xsi:type="setup.workingsets:WorkingSetTask">
-        <workingSet
-            name="build"
-            id="">
+            rootFolder="${jbt.build.gitclone.location}/">
           <predicate
-              xsi:type="predicates:LocationPredicate"
-              pattern=".*/jbosstools-build/parent/.*"/>
-        </workingSet>
+              xsi:type="predicates:NotPredicate">
+            <operand
+                xsi:type="predicates:NaturePredicate"
+                nature="org.eclipse.m2e.core.maven2Nature"/>
+          </predicate>
+        </sourceLocator>
       </setupTask>
     </setupTask>
     <setupTask
@@ -120,13 +106,32 @@
           xsi:type="setup:CompoundTask"
           name="foundation">
         <setupTask
+            xsi:type="maven:MavenImportTask">
+          <sourceLocator>
+            <predicate
+                xsi:type="predicates:AndPredicate">
+              <operand
+                  xsi:type="predicates:LocationPredicate"
+                  pattern="[.*/foundation/plugins/.*|.*/foundation/tests/.*|.*/foundation/features/.*]"/>
+              <operand
+                  xsi:type="predicates:NaturePredicate"
+                  nature="org.eclipse.m2e.core.maven2Nature"/>
+            </predicate>
+          </sourceLocator>
+        </setupTask>
+        <setupTask
             xsi:type="projects:ProjectsImportTask">
-          <sourceLocator
-              rootFolder="${jbt.base.gitclone.location}/foundation/plugins"/>
-          <sourceLocator
-              rootFolder="${jbt.base.gitclone.location}/foundation/tests"/>
-          <sourceLocator
-              rootFolder="${jbt.base.gitclone.location}/foundation/features"/>
+          <sourceLocator>
+            <predicate
+                xsi:type="predicates:LocationPredicate"
+                pattern="[.*/foundation/plugins/.*|.*/foundation/tests/.*|.*/foundation/features/.*]"/>
+            <predicate
+                xsi:type="predicates:NotPredicate">
+              <operand
+                  xsi:type="predicates:NaturePredicate"
+                  nature="org.eclipse.m2e.core.maven2Nature"/>
+            </predicate>
+          </sourceLocator>
         </setupTask>
       </setupTask>
       <setupTask
@@ -168,16 +173,6 @@
               rootFolder="${jbt.base.gitclone.location}/runtimes/features"/>
         </setupTask>
       </setupTask>
-      <setupTask
-          xsi:type="setup.workingsets:WorkingSetTask">
-        <workingSet
-            name="base"
-            id="">
-          <predicate
-              xsi:type="predicates:LocationPredicate"
-              pattern=".*/jbosstools-base/.*"/>
-        </workingSet>
-      </setupTask>
     </setupTask>
     <setupTask
         xsi:type="setup:CompoundTask"
@@ -196,16 +191,39 @@
         <sourceLocator
             rootFolder="${jbt.hibernate.gitclone.location}/features"/>
       </setupTask>
-      <setupTask
-          xsi:type="setup.workingsets:WorkingSetTask">
-        <workingSet
-            name="hibernate">
-          <predicate
-              xsi:type="predicates:LocationPredicate"
-              pattern=".*/jbosstools-hibernate/.*"/>
-        </workingSet>
-      </setupTask>
     </setupTask>
+    <setupTask
+        xsi:type="setup.workingsets:WorkingSetTask">
+      <workingSet
+          name="target-platform">
+        <predicate
+            xsi:type="predicates:LocationPredicate"
+            pattern=".*/jbosstools-target-platforms/.*"/>
+      </workingSet>
+      <workingSet
+          name="build"
+          id="">
+        <predicate
+            xsi:type="predicates:LocationPredicate"
+            pattern=".*/jbosstools-build/parent/.*"/>
+      </workingSet>
+      <workingSet
+          name="hibernate">
+        <predicate
+            xsi:type="predicates:LocationPredicate"
+            pattern=".*/jbosstools-hibernate/.*"/>
+      </workingSet>
+      <workingSet
+          name="base"
+          id="">
+        <predicate
+            xsi:type="predicates:LocationPredicate"
+            pattern=".*/jbosstools-base/.*"/>
+      </workingSet>
+    </setupTask>
+    <setupTask
+        xsi:type="pde:TargetPlatformTask"
+        name="jbosstoolstarget-4.50.0.Beta1-SNAPSHOT"/>
   </stream>
   <logicalProjectContainer
       xsi:type="setup:ProjectCatalog"

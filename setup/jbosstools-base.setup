@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<setup:Project
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:git="http://www.eclipse.org/oomph/setup/git/1.0"
+    xmlns:setup="http://www.eclipse.org/oomph/setup/1.0"
+    xmlns:setup.targlets="http://www.eclipse.org/oomph/setup/targlets/1.0"
+    xsi:schemaLocation="http://www.eclipse.org/oomph/setup/git/1.0 http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/models/Git.ecore http://www.eclipse.org/oomph/setup/targlets/1.0 http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/models/SetupTarglets.ecore"
+    name="jbosstools-base"
+    label="JBossTools Base">
+  <setupTask
+      xsi:type="git:GitCloneTask"
+      id="git.clone.base"
+      remoteURI="git://github.com/jbosstools/jbosstools-base.git"
+      pushURI=""/>
+  <setupTask
+      xsi:type="setup.targlets:TargletTask">
+    <targlet
+        name="base"
+        activeRepositoryList="">
+      <requirement
+          name="org.eclipse.gef.feature.group"/>
+      <sourceLocator
+          rootFolder="${git.clone.base.location}"
+          locateNestedProjects="true"/>
+    </targlet>
+  </setupTask>
+  <stream name="master"/>
+  <logicalProjectContainer
+      xsi:type="setup:ProjectCatalog"
+      href="index:/org.eclipse.setup#//@projectCatalogs[name='org.eclipse']"/>
+  <description>JBossTools Base Module</description>
+</setup:Project>
