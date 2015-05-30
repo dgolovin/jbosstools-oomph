@@ -38,9 +38,11 @@
   <productCatalog
       href="catalog:/self-product-catalog.setup#/"/>
   <productCatalog
-      href="org.eclipse.products.setup#/"/>
+      href="org.jboss.products.setup#/"/>
   <projectCatalog
       href="org.eclipse.projects.setup#/"/>
+  <!--projectCatalog
+      href="com.github.projects.setup#/"/-->
   <projectCatalog
-      href="com.github.projects.setup#/"/>
+      href="org.jboss.projects.setup#/"/>      
 </setup:Index>

@@ -9,43 +9,43 @@
     xmlns:setup.targlets="http://www.eclipse.org/oomph/setup/targlets/1.0"
     xmlns:setup.workingsets="http://www.eclipse.org/oomph/setup/workingsets/1.0"
     xsi:schemaLocation="http://www.eclipse.org/oomph/setup/git/1.0 http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/models/Git.ecore http://www.eclipse.org/oomph/predicates/1.0 http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/models/Predicates.ecore http://www.eclipse.org/oomph/setup/targlets/1.0 http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/models/SetupTarglets.ecore http://www.eclipse.org/oomph/setup/workingsets/1.0 http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/models/SetupWorkingSets.ecore"
-    name="org.tools.hibernate"
-    label="JBossTools Hibernate">
+    name="jbosstools-vpe"
+    label="JBossTools VPE">
   <setupTask
       xsi:type="git:GitCloneTask"
-      id="git.clone.hibernate"
-      remoteURI="git://github.com/jbosstools/jbosstools-hibernate.git"
-      pushURI="">
-    <description>Hibernate github repository URL</description>
-  </setupTask>
+      id="git.clone.vpe"
+      remoteURI="git://github.com/jbosstools/jbosstools-vpe.git"
+      pushURI=""/>
   <setupTask
       xsi:type="setup.targlets:TargletTask">
     <targlet
-        name="jbosstools-hibernate"
+        name="jbosstools-vpe"
         activeRepositoryList="${eclipse.target.platform}">
       <sourceLocator
-          rootFolder="${git.clone.hibernate.location}"/>
+          rootFolder="${git.clone.vpe.location}"
+          locateNestedProjects="true"/>
       <repositoryList
           name="Mars">
         <repository
-            url="${base.p2repo.url}"/>
+            url="${vpe.p2repo.url}"/>
         <repository
-            url="${hibernate.p2repo.url}"/>
+            url="${base.p2repo.url}"/>
       </repositoryList>
     </targlet>
   </setupTask>
   <setupTask
       xsi:type="setup.workingsets:WorkingSetTask">
     <workingSet
-        name="jbosstools-hibernate">
+        name="jbosstools-base"
+        id="">
       <predicate
           xsi:type="predicates:LocationPredicate"
-          pattern="${git.clone.hibernate.location}/.*"/>
+          pattern="${git.clone.vpe.location}/.*"/>
     </workingSet>
   </setupTask>
   <stream name="master"/>
   <logicalProjectContainer
       xsi:type="setup:ProjectCatalog"
       href="index:/org.eclipse.setup#//@projectCatalogs[name='org.eclipse']"/>
-  <description>JBoss Tools Hibernate provides cool stuff</description>
+  <description>JBossTools VPE Module</description>
 </setup:Project>
