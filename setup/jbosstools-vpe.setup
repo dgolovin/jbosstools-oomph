@@ -10,11 +10,11 @@
     xmlns:setup.workingsets="http://www.eclipse.org/oomph/setup/workingsets/1.0"
     xsi:schemaLocation="http://www.eclipse.org/oomph/setup/git/1.0 http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/models/Git.ecore http://www.eclipse.org/oomph/predicates/1.0 http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/models/Predicates.ecore http://www.eclipse.org/oomph/setup/targlets/1.0 http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/models/SetupTarglets.ecore http://www.eclipse.org/oomph/setup/workingsets/1.0 http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/models/SetupWorkingSets.ecore"
     name="jbosstools-vpe"
-    label="JBossTools VPE">
+    label="jbosstools-vpe">
   <setupTask
       xsi:type="git:GitCloneTask"
       id="git.clone.vpe"
-      remoteURI="git://github.com/jbosstools/jbosstools-vpe.git"
+      remoteURI="https://github.com/jbosstools/jbosstools-vpe.git"
       pushURI=""/>
   <setupTask
       xsi:type="setup.targlets:TargletTask">
@@ -36,7 +36,7 @@
   <setupTask
       xsi:type="setup.workingsets:WorkingSetTask">
     <workingSet
-        name="jbosstools-base"
+        name="jbosstools-vpe"
         id="">
       <predicate
           xsi:type="predicates:LocationPredicate"
@@ -47,5 +47,5 @@
   <logicalProjectContainer
       xsi:type="setup:ProjectCatalog"
       href="index:/org.eclipse.setup#//@projectCatalogs[name='org.eclipse']"/>
-  <description>JBossTools VPE Module</description>
+  <description>JBoss Tools VPE Module</description>
 </setup:Project>

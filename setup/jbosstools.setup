@@ -9,7 +9,7 @@
     xmlns:setup.targlets="http://www.eclipse.org/oomph/setup/targlets/1.0"
     xsi:schemaLocation="http://www.eclipse.org/oomph/setup/jdt/1.0 http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/models/JDT.ecore http://www.eclipse.org/oomph/setup/targlets/1.0 http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/models/SetupTarglets.ecore"
     name="jbosstools"
-    label="JBossTools">
+    label="jbosstools">
   <setupTask
       xsi:type="setup:CompoundTask"
       name="Global Variables">
@@ -268,5 +268,5 @@
   <logicalProjectContainer
       xsi:type="setup:ProjectCatalog"
       href="index:/org.eclipse.setup#//@projectCatalogs[name='com.github']"/>
-  <description>JBossTools</description>
+  <description>JBoss Tools</description>
 </setup:Project>

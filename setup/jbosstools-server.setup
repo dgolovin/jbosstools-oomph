@@ -10,13 +10,13 @@
     xmlns:setup.workingsets="http://www.eclipse.org/oomph/setup/workingsets/1.0"
     xsi:schemaLocation="http://www.eclipse.org/oomph/setup/git/1.0 http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/models/Git.ecore http://www.eclipse.org/oomph/predicates/1.0 http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/models/Predicates.ecore http://www.eclipse.org/oomph/setup/targlets/1.0 http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/models/SetupTarglets.ecore http://www.eclipse.org/oomph/setup/workingsets/1.0 http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/models/SetupWorkingSets.ecore"
     name="jbosstools-server"
-    label="JBossTools Server">
+    label="jbosstools-server">
   <setupTask
       xsi:type="git:GitCloneTask"
       id="git.clone.server"
-      remoteURI="git://github.com/jbosstools/jbosstools-server.git"
+      remoteURI="https://github.com/jbosstools/jbosstools-server.git"
       pushURI="">
-    <description>JBossTools Server git repository</description>
+    <description>JBoss Tools Server git repository</description>
   </setupTask>
   <setupTask
       xsi:type="setup.targlets:TargletTask">
@@ -49,5 +49,5 @@
   <logicalProjectContainer
       xsi:type="setup:ProjectCatalog"
       href="index:/org.eclipse.setup#//@projectCatalogs[name='org.eclipse']"/>
-  <description>JBossTools Server</description>
+  <description>JBoss Tools Server</description>
 </setup:Project>
