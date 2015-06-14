@@ -260,7 +260,7 @@
         <repository
             url="http://download.jboss.org/jbosstools/updates/requirements/mylyn/3.11.0-v20140314-2044/"/>
         <repository
-            url="http://download.jboss.org/jbosstools/updates/requirements/luna/201406120900-RC4/"/>
+            url="http://download.jboss.org/jbosstools/updates/requirements/mars/201506121000-RC4/"/>
         <repository
             url="http://download.jboss.org/jbosstools/updates/requirements/webtools/S-3.7.0M7-20150505000109/"/>
         <repository
@@ -270,8 +270,6 @@
         <repository
             url="http://download.jboss.org/jbosstools/updates/requirements/e4.ui/201505051028-SNAPSHOT/"/>
       </repositoryList>
-      <repositoryList
-          name="Luna"/>
     </targlet>
   </setupTask>
         <project href="jbosstools-portlet.setup#/"/>
