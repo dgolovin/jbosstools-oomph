@@ -16,7 +16,7 @@
       id="git.clone.jst"
       remoteURI="https://github.com/jbosstools/jbosstools-jst.git"
       pushURI="">
-    <description>JBoss Tools JST git repository</description>
+    <description>jbosstools-jst</description>
   </setupTask>
   <setupTask
       xsi:type="setup.targlets:TargletTask">
@@ -24,26 +24,26 @@
         name="jbosstools-jst"
         activeRepositoryList="${eclipse.target.platform}">
       <sourceLocator
-          rootFolder="${git.clone.jst.location}"
-          locateNestedProjects="true"/>
+          rootFolder="${git.clone.jst.location}"/>
+       <projectFactory
+            xsi:type="resources:MavenProjectFactory"/>
       <repositoryList
           name="Mars">
         <repository
-            url="${base.p2repo.url}"/>
-        <repository
             url="${jst.p2repo.url}"/>
         <repository
-            url="http://download.jboss.org/jbosstools/updates/requirements/tern/0.9.0.201504141710"/>
+            url="${base.p2repo.url}"/>
         <repository
-            url="http://download.jboss.org/jbosstools/updates/requirements/angularjs/0.9.0.201504121519"/>
+            url="${tern.p2repo.url}"/>
+        <repository
+            url="${angularjs.p2repo.url}"/>
       </repositoryList>
     </targlet>
   </setupTask>
   <setupTask
       xsi:type="setup.workingsets:WorkingSetTask">
     <workingSet
-        name="jbosstools-jst"
-        id="">
+        name="jbosstools-jst">
       <predicate
           xsi:type="predicates:LocationPredicate"
           pattern="${git.clone.jst.location}/.*"/>
@@ -53,5 +53,5 @@
   <logicalProjectContainer
       xsi:type="setup:ProjectCatalog"
       href="index:/org.eclipse.setup#//@projectCatalogs[name='org.eclipse']"/>
-  <description>JBoss Tools JST</description>
+  <description>jbosstools-jst</description>
 </setup:Project>

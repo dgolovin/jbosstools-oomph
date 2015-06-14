@@ -5,11 +5,10 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:git="http://www.eclipse.org/oomph/setup/git/1.0"
     xmlns:predicates="http://www.eclipse.org/oomph/predicates/1.0"
-    xmlns:resources="http://www.eclipse.org/oomph/resources/1.0"
     xmlns:setup="http://www.eclipse.org/oomph/setup/1.0"
     xmlns:setup.targlets="http://www.eclipse.org/oomph/setup/targlets/1.0"
     xmlns:setup.workingsets="http://www.eclipse.org/oomph/setup/workingsets/1.0"
-    xsi:schemaLocation="http://www.eclipse.org/oomph/setup/git/1.0 http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/models/Git.ecore http://www.eclipse.org/oomph/predicates/1.0 http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/models/Predicates.ecore http://www.eclipse.org/oomph/resources/1.0 http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/models/Resources.ecore http://www.eclipse.org/oomph/setup/targlets/1.0 http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/models/SetupTarglets.ecore http://www.eclipse.org/oomph/setup/workingsets/1.0 http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/models/SetupWorkingSets.ecore"
+    xsi:schemaLocation="http://www.eclipse.org/oomph/setup/git/1.0 http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/models/Git.ecore http://www.eclipse.org/oomph/predicates/1.0 http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/models/Predicates.ecore http://www.eclipse.org/oomph/setup/targlets/1.0 http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/models/SetupTarglets.ecore http://www.eclipse.org/oomph/setup/workingsets/1.0 http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/models/SetupWorkingSets.ecore"
     name="jbosstools-central"
     label="jbosstools-central">
   <setupTask
@@ -17,7 +16,7 @@
       id="git.clone.central"
       remoteURI="https://github.com/jbosstools/jbosstools-central.git"
       pushURI="">
-    <description>JBoss Tools Central git repository</description>
+    <description>jbosstools-central</description>
   </setupTask>
   <setupTask
       xsi:type="setup.targlets:TargletTask">
@@ -25,19 +24,15 @@
         name="jbosstools-central"
         activeRepositoryList="${eclipse.target.platform}">
       <sourceLocator
-          rootFolder="${git.clone.central.location}"
-          locateNestedProjects="true">
-        <projectFactory
+          rootFolder="${git.clone.central.location}"/>
+       <projectFactory
             xsi:type="resources:MavenProjectFactory"/>
-      </sourceLocator>
       <repositoryList
           name="Mars">
         <repository
             url="${central.p2repo.url}"/>
         <repository
             url="${base.p2repo.url}"/>
-        <repository
-            url="${javaee.p2repo.url}"/>
         <repository
             url="${javaee.p2repo.url}"/>
         <repository
@@ -60,8 +55,7 @@
   <setupTask
       xsi:type="setup.workingsets:WorkingSetTask">
     <workingSet
-        name="jbosstools-central"
-        id="">
+        name="jbosstools-central">
       <predicate
           xsi:type="predicates:LocationPredicate"
           pattern="${git.clone.central.location}/.*"/>
@@ -71,5 +65,5 @@
   <logicalProjectContainer
       xsi:type="setup:ProjectCatalog"
       href="index:/org.eclipse.setup#//@projectCatalogs[name='org.eclipse']"/>
-  <description>JBoss Tools Central</description>
+  <description>jbosstools-central</description>
 </setup:Project>

@@ -16,7 +16,7 @@
       id="git.clone.hibernate"
       remoteURI="https://github.com/jbosstools/jbosstools-hibernate.git"
       pushURI="">
-    <description>Hibernate github repository URL</description>
+    <description>Hibernate Tools</description>
   </setupTask>
   <setupTask
       xsi:type="setup.targlets:TargletTask">
@@ -25,12 +25,14 @@
         activeRepositoryList="${eclipse.target.platform}">
       <sourceLocator
           rootFolder="${git.clone.hibernate.location}"/>
+       <projectFactory
+            xsi:type="resources:MavenProjectFactory"/>
       <repositoryList
           name="Mars">
         <repository
-            url="${base.p2repo.url}"/>
-        <repository
             url="${hibernate.p2repo.url}"/>
+        <repository
+            url="${base.p2repo.url}"/>
       </repositoryList>
     </targlet>
   </setupTask>
@@ -47,5 +49,5 @@
   <logicalProjectContainer
       xsi:type="setup:ProjectCatalog"
       href="index:/org.eclipse.setup#//@projectCatalogs[name='org.eclipse']"/>
-  <description>JBoss Tools Hibernate provides cool stuff</description>
+  <description>Hibernate Tools</description>
 </setup:Project>

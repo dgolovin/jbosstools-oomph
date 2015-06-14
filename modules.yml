@@ -1,0 +1,116 @@
+
+base:
+  module: jbosstools-base
+  description: JBoss Tools Base
+
+hibernate:
+  description: Hibernate Tools
+  dependencies:
+    - base
+
+vpe:
+  description: Visual Page Editor
+  dependencies:
+    - base
+
+server:
+  description: Server Tools
+  dependencies:
+    - base
+
+portlet:
+  dependencies:
+    - server
+    - javaee
+    - base
+    - hibernate
+    - jst
+    - vpe
+
+# not included since template assumes things are p2 stuff
+#website:
+#  description: tools.jboss.org using Awestruct
+
+openshift:
+  dependencies:
+    - server
+    - base
+
+livereload:
+  dependencies:
+    - base
+    - server
+
+target-platforms:
+  description: JBoss Tools Target platforms
+
+browsersim:
+  dependencies:
+    - base
+    - jst
+
+forge:
+  dependencies:
+    - base
+
+freemarker:
+  dependencies:
+    - base
+
+webservices:
+  dependencies:
+    - base
+    - server
+
+locus:
+  description: Locus, an orbit for JBoss Tools
+
+playground:
+  description: Playground (not for production)
+
+thym:
+  module: eclipse-thym
+  description: Eclipse THyM
+  giturl: https://github.com/eclipse/thym.git
+    
+xulrunner:
+  description: JBoss Tools XULRunner
+  dependencies:
+    - base
+
+tern:
+  module: eclipse-tern
+  description: tern for java
+  giturl: https://github.com/angelozerr/tern.java.git
+
+angularjs:
+  module: eclipse-angularjs
+  description: angularjs for eclipse
+  giturl: https://github.com/angelozerr/angularjs-eclipse.git
+  
+jst:
+  dependencies:
+    - base
+    - tern
+    - angularjs
+    
+javaee:
+  dependencies:
+    - base
+    - vpe
+    - server
+    - hibernate
+    - jst
+    - xulrunner
+
+central:
+  dependencies: 
+    - base
+    - javaee
+    - portlet
+    - jst
+    - hibernate
+    - server
+    - vpe
+    - playground
+    - thym

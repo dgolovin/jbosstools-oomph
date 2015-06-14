@@ -42,49 +42,49 @@
       <setupTask
           xsi:type="setup:VariableTask"
           name="base.p2repo.url"
-          value="${snapshot.url.prefix}/jbosstools-base_${scope.project.stream.name}/latest/all/repo/">
+          value="\${snapshot.url.prefix}/jbosstools-base_\${scope.project.stream.name}/latest/all/repo/">
         <annotation
             source="http://www.eclipse.org/oomph/setup/GlobalVariable"/>
       </setupTask>
       <setupTask
           xsi:type="setup:VariableTask"
           name="jst.p2repo.url"
-          value="${snapshot.url.prefix}/jbosstools-jst_${scope.project.stream.name}/latest/all/repo/">
+          value="\${snapshot.url.prefix}/jbosstools-jst_\${scope.project.stream.name}/latest/all/repo/">
         <annotation
             source="http://www.eclipse.org/oomph/setup/GlobalVariable"/>
       </setupTask>
       <setupTask
           xsi:type="setup:VariableTask"
           name="hibernate.p2repo.url"
-          value="${snapshot.url.prefix}/jbosstools-hibernate_${scope.project.stream.name}/latest/all/repo/">
+          value="\${snapshot.url.prefix}/jbosstools-hibernate_\${scope.project.stream.name}/latest/all/repo/">
         <annotation
             source="http://www.eclipse.org/oomph/setup/GlobalVariable"/>
       </setupTask>
       <setupTask
           xsi:type="setup:VariableTask"
           name="server.p2repo.url"
-          value="${snapshot.url.prefix}/jbosstools-server_${scope.project.stream.name}/latest/all/repo/">
+          value="\${snapshot.url.prefix}/jbosstools-server_\${scope.project.stream.name}/latest/all/repo/">
         <annotation
             source="http://www.eclipse.org/oomph/setup/GlobalVariable"/>
       </setupTask>
       <setupTask
           xsi:type="setup:VariableTask"
           name="vpe.p2repo.url"
-          value="${snapshot.url.prefix}/jbosstools-vpe_${scope.project.stream.name}/latest/all/repo/">
+          value="\${snapshot.url.prefix}/jbosstools-vpe_\${scope.project.stream.name}/latest/all/repo/">
         <annotation
             source="http://www.eclipse.org/oomph/setup/GlobalVariable"/>
       </setupTask>
       <setupTask
           xsi:type="setup:VariableTask"
           name="browsersim.p2repo.url"
-          value="${snapshot.url.prefix}/jbosstools-browsersim_${scope.project.stream.name}/latest/all/repo/">
+          value="\${snapshot.url.prefix}/jbosstools-browsersim_\${scope.project.stream.name}/latest/all/repo/">
         <annotation
             source="http://www.eclipse.org/oomph/setup/GlobalVariable"/>
       </setupTask>
       <setupTask
           xsi:type="setup:VariableTask"
           name="javaee.p2repo.url"
-          value="${snapshot.url.prefix}/jbosstools-javaee_${scope.project.stream.name}/latest/all/repo/">
+          value="\${snapshot.url.prefix}/jbosstools-javaee_\${scope.project.stream.name}/latest/all/repo/">
         <annotation
             source="http://www.eclipse.org/oomph/setup/GlobalVariable"/>
       </setupTask>
@@ -99,7 +99,7 @@
       <setupTask
           xsi:type="setup:VariableTask"
           name="playground.p2repo.url"
-          value="${snapshot.url.prefix}/jbosstools-playground_${scope.project.stream.name}/latest/all/repo">
+          value="\${snapshot.url.prefix}/jbosstools-playground_\${scope.project.stream.name}/latest/all/repo">
         <annotation
             source="http://www.eclipse.org/oomph/setup/GlobalVariable"/>
       </setupTask>
@@ -121,21 +121,21 @@
       <setupTask
           xsi:type="setup:VariableTask"
           name="aerogear.p2repo.url"
-          value="${snapshot.url.prefix}/jbosstools-aerogear_${scope.project.stream.name}/latest/all/repo/">
+          value="\${snapshot.url.prefix}/jbosstools-aerogear_\${scope.project.stream.name}/latest/all/repo/">
         <annotation
             source="http://www.eclipse.org/oomph/setup/GlobalVariable"/>
       </setupTask>
       <setupTask
           xsi:type="setup:VariableTask"
           name="central.p2repo.url"
-          value="${snapshot.url.prefix}/jbosstools-central_${scope.project.stream.name}/latest/all/repo/">
+          value="\${snapshot.url.prefix}/jbosstools-central_\${scope.project.stream.name}/latest/all/repo/">
         <annotation
             source="http://www.eclipse.org/oomph/setup/GlobalVariable"/>
       </setupTask>
       <setupTask
           xsi:type="setup:VariableTask"
           name="playground.p2repo.url"
-          value="${snapshot.url.prefix}/jbosstools-playground_${scope.project.stream.name}/latest/all/repo/">
+          value="\${snapshot.url.prefix}/jbosstools-playground_\${scope.project.stream.name}/latest/all/repo/">
         <annotation
             source="http://www.eclipse.org/oomph/setup/GlobalVariable"/>
       </setupTask>
@@ -165,33 +165,33 @@
       url="configuration:/config.ini">
     <modification
         pattern="osgi\.instance\.area\.default=(@user\.home/workspace)">
-      <substitution>${workspace.location|path}</substitution>
+      <substitution>\${workspace.location|path}</substitution>
     </modification>
   </setupTask>
   <setupTask
       xsi:type="jdt:JRETask"
       version="JavaSE-1.8"
-      location="${jre.location-1.8}">
-    <description>Define the JRE needed to compile and run the Java projects of ${scope.project.label}</description>
+      location="\${jre.location-1.8}">
+    <description>Define the JRE needed to compile and run the Java projects of \${scope.project.label}</description>
   </setupTask>
   <setupTask
       xsi:type="setup:EclipseIniTask"
       option="-Xmx"
       value="2048m"
       vm="true">
-    <description>Set the heap space needed to work with the projects of ${scope.project.label}</description>
+    <description>Set the heap space needed to work with the projects of \${scope.project.label}</description>
   </setupTask>
   <setupTask
       xsi:type="setup:ResourceCreationTask"
       excludedTriggers="STARTUP MANUAL"
       content="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;section name=&quot;Workbench&quot;>&#xD;&#xA;&#x9;&lt;section name=&quot;org.eclipse.jdt.internal.ui.packageview.PackageExplorerPart&quot;>&#xD;&#xA;&#x9;&#x9;&lt;item value=&quot;true&quot; key=&quot;group_libraries&quot;/>&#xD;&#xA;&#x9;&#x9;&lt;item value=&quot;false&quot; key=&quot;linkWithEditor&quot;/>&#xD;&#xA;&#x9;&#x9;&lt;item value=&quot;2&quot; key=&quot;layout&quot;/>&#xD;&#xA;&#x9;&#x9;&lt;item value=&quot;2&quot; key=&quot;rootMode&quot;/>&#xD;&#xA;&#x9;&#x9;&lt;item value=&quot;&amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;UTF-8&amp;quot;?&amp;gt;&amp;#x0D;&amp;#x0A;&amp;lt;packageExplorer configured=&amp;quot;true&amp;quot; group_libraries=&amp;quot;1&amp;quot; layout=&amp;quot;2&amp;quot; linkWithEditor=&amp;quot;0&amp;quot; rootMode=&amp;quot;2&amp;quot; sortWorkingSets=&amp;quot;false&amp;quot; workingSetName=&amp;quot;&amp;quot;&amp;gt;&amp;#x0D;&amp;#x0A;&amp;lt;localWorkingSetManager&amp;gt;&amp;#x0D;&amp;#x0A;&amp;lt;workingSet editPageId=&amp;quot;org.eclipse.jdt.internal.ui.OthersWorkingSet&amp;quot; factoryID=&amp;quot;org.eclipse.ui.internal.WorkingSetFactory&amp;quot; id=&amp;quot;1382792884467_1&amp;quot; label=&amp;quot;Other Projects&amp;quot; name=&amp;quot;Other Projects&amp;quot;/&amp;gt;&amp;#x0D;&amp;#x0A;&amp;lt;/localWorkingSetManager&amp;gt;&amp;#x0D;&amp;#x0A;&amp;lt;activeWorkingSet workingSetName=&amp;quot;Other Projects&amp;quot;/&amp;gt;&amp;#x0D;&amp;#x0A;&amp;lt;allWorkingSets workingSetName=&amp;quot;Other Projects&amp;quot;/&amp;gt;&amp;#x0D;&amp;#x0A;&amp;lt;/packageExplorer&amp;gt;&quot; key=&quot;memento&quot;/>&#xD;&#xA;&#x9;&lt;/section>&#xD;&#xA;&lt;/section>&#xD;&#xA;"
-      targetURL="${workspace.location|uri}/.metadata/.plugins/org.eclipse.jdt.ui/dialog_settings.xml"
+      targetURL="\${workspace.location|uri}/.metadata/.plugins/org.eclipse.jdt.ui/dialog_settings.xml"
       encoding="UTF-8">
     <description>Initialize JDT's package explorer to show working sets as its root objects</description>
   </setupTask>
   <setupTask
       xsi:type="setup:ResourceCreationTask"
-      content="MAX_RECENT_WORKSPACES=5&#xD;&#xA;RECENT_WORKSPACES=${workspace.location|property}&#xD;&#xA;RECENT_WORKSPACES_PROTOCOL=3&#xD;&#xA;SHOW_WORKSPACE_SELECTION_DIALOG=true&#xD;&#xA;eclipse.preferences.version=1"
+      content="MAX_RECENT_WORKSPACES=5&#xD;&#xA;RECENT_WORKSPACES=\${workspace.location|property}&#xD;&#xA;RECENT_WORKSPACES_PROTOCOL=3&#xD;&#xA;SHOW_WORKSPACE_SELECTION_DIALOG=true&#xD;&#xA;eclipse.preferences.version=1"
       targetURL="configuration:/.settings/org.eclipse.ui.ide.prefs"/>
   <setupTask
       xsi:type="setup:PreferenceTask"
@@ -225,7 +225,7 @@
       xsi:type="setup.targlets:TargletTask">
     <targlet
         name="jbosstools"
-        activeRepositoryList="${eclipse.target.platform}">
+        activeRepositoryList="\${eclipse.target.platform}">
       <requirement
           name="org.eclipse.platform.feature.group"/>
       <repositoryList
@@ -269,27 +269,9 @@
           name="Luna"/>
     </targlet>
   </setupTask>
-        <project href="jbosstools-portlet.setup#/"/>
-        <project href="eclipse-thym.setup#/"/>
-        <project href="jbosstools-livereload.setup#/"/>
-        <project href="jbosstools-target-platforms.setup#/"/>
-        <project href="jbosstools-locus.setup#/"/>
-        <project href="jbosstools-jst.setup#/"/>
-        <project href="jbosstools-base.setup#/"/>
-        <project href="eclipse-angularjs.setup#/"/>
-        <project href="jbosstools-browsersim.setup#/"/>
-        <project href="eclipse-tern.setup#/"/>
-        <project href="jbosstools-central.setup#/"/>
-        <project href="jbosstools-freemarker.setup#/"/>
-        <project href="jbosstools-javaee.setup#/"/>
-        <project href="jbosstools-server.setup#/"/>
-        <project href="jbosstools-vpe.setup#/"/>
-        <project href="jbosstools-xulrunner.setup#/"/>
-        <project href="jbosstools-webservices.setup#/"/>
-        <project href="jbosstools-hibernate.setup#/"/>
-        <project href="jbosstools-forge.setup#/"/>
-        <project href="jbosstools-openshift.setup#/"/>
-        <project href="jbosstools-playground.setup#/"/>
+  	#for $ref in $moduleref
+        <project href="${ref}"/>
+	#end for
   <logicalProjectContainer
       xsi:type="setup:ProjectCatalog"
       href="index:/org.eclipse.setup#//@projectCatalogs[name='com.github']"/>

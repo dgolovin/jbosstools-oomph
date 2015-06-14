@@ -15,15 +15,18 @@
       xsi:type="git:GitCloneTask"
       id="git.clone.base"
       remoteURI="https://github.com/jbosstools/jbosstools-base.git"
-      pushURI=""/>
+      pushURI="">
+    <description>JBoss Tools Base</description>
+  </setupTask>
   <setupTask
       xsi:type="setup.targlets:TargletTask">
     <targlet
         name="jbosstools-base"
         activeRepositoryList="${eclipse.target.platform}">
       <sourceLocator
-          rootFolder="${git.clone.base.location}"
-          locateNestedProjects="true"/>
+          rootFolder="${git.clone.base.location}"/>
+       <projectFactory
+            xsi:type="resources:MavenProjectFactory"/>
       <repositoryList
           name="Mars">
         <repository
@@ -34,8 +37,7 @@
   <setupTask
       xsi:type="setup.workingsets:WorkingSetTask">
     <workingSet
-        name="jbosstools-base"
-        id="">
+        name="jbosstools-base">
       <predicate
           xsi:type="predicates:LocationPredicate"
           pattern="${git.clone.base.location}/.*"/>
@@ -45,5 +47,5 @@
   <logicalProjectContainer
       xsi:type="setup:ProjectCatalog"
       href="index:/org.eclipse.setup#//@projectCatalogs[name='org.eclipse']"/>
-  <description>JBoss Tools Base Module</description>
+  <description>JBoss Tools Base</description>
 </setup:Project>

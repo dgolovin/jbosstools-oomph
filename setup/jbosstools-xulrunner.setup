@@ -15,15 +15,18 @@
       xsi:type="git:GitCloneTask"
       id="git.clone.xulrunner"
       remoteURI="https://github.com/jbosstools/jbosstools-xulrunner.git"
-      pushURI=""/>
+      pushURI="">
+    <description>JBoss Tools XULRunner</description>
+  </setupTask>
   <setupTask
       xsi:type="setup.targlets:TargletTask">
     <targlet
         name="jbosstools-xulrunner"
         activeRepositoryList="${eclipse.target.platform}">
       <sourceLocator
-          rootFolder="${git.clone.xulrunner.location}"
-          locateNestedProjects="true"/>
+          rootFolder="${git.clone.xulrunner.location}"/>
+       <projectFactory
+            xsi:type="resources:MavenProjectFactory"/>
       <repositoryList
           name="Mars">
         <repository
@@ -36,16 +39,15 @@
   <setupTask
       xsi:type="setup.workingsets:WorkingSetTask">
     <workingSet
-        name="jbosstools-xulrunner"
-        id="">
+        name="jbosstools-xulrunner">
       <predicate
           xsi:type="predicates:LocationPredicate"
-          pattern="${git.clone.vpe.location}/.*"/>
+          pattern="${git.clone.xulrunner.location}/.*"/>
     </workingSet>
   </setupTask>
   <stream name="master"/>
   <logicalProjectContainer
       xsi:type="setup:ProjectCatalog"
       href="index:/org.eclipse.setup#//@projectCatalogs[name='org.eclipse']"/>
-  <description>JBoss Tools Xulrunner Module</description>
+  <description>JBoss Tools XULRunner</description>
 </setup:Project>

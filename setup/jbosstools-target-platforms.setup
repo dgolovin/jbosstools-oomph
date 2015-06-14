@@ -9,55 +9,43 @@
     xmlns:setup.targlets="http://www.eclipse.org/oomph/setup/targlets/1.0"
     xmlns:setup.workingsets="http://www.eclipse.org/oomph/setup/workingsets/1.0"
     xsi:schemaLocation="http://www.eclipse.org/oomph/setup/git/1.0 http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/models/Git.ecore http://www.eclipse.org/oomph/predicates/1.0 http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/models/Predicates.ecore http://www.eclipse.org/oomph/setup/targlets/1.0 http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/models/SetupTarglets.ecore http://www.eclipse.org/oomph/setup/workingsets/1.0 http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/models/SetupWorkingSets.ecore"
-    name="jbosstools-javaee"
-    label="jbosstools-javaee">
+    name="jbosstools-target-platforms"
+    label="jbosstools-target-platforms">
   <setupTask
       xsi:type="git:GitCloneTask"
-      id="git.clone.javaee"
-      remoteURI="https://github.com/jbosstools/jbosstools-javaee.git"
+      id="git.clone.target-platforms"
+      remoteURI="https://github.com/jbosstools/jbosstools-target-platforms.git"
       pushURI="">
-    <description>jbosstools-javaee</description>
+    <description>JBoss Tools Target platforms</description>
   </setupTask>
   <setupTask
       xsi:type="setup.targlets:TargletTask">
     <targlet
-        name="jbosstools-javaee"
+        name="jbosstools-target-platforms"
         activeRepositoryList="${eclipse.target.platform}">
       <sourceLocator
-          rootFolder="${git.clone.javaee.location}"/>
+          rootFolder="${git.clone.target-platforms.location}"/>
        <projectFactory
             xsi:type="resources:MavenProjectFactory"/>
       <repositoryList
           name="Mars">
         <repository
-            url="${javaee.p2repo.url}"/>
-        <repository
-            url="${base.p2repo.url}"/>
-        <repository
-            url="${vpe.p2repo.url}"/>
-        <repository
-            url="${server.p2repo.url}"/>
-        <repository
-            url="${hibernate.p2repo.url}"/>
-        <repository
-            url="${jst.p2repo.url}"/>
-        <repository
-            url="${xulrunner.p2repo.url}"/>
+            url="${target-platforms.p2repo.url}"/>
       </repositoryList>
     </targlet>
   </setupTask>
   <setupTask
       xsi:type="setup.workingsets:WorkingSetTask">
     <workingSet
-        name="jbosstools-javaee">
+        name="jbosstools-target-platforms">
       <predicate
           xsi:type="predicates:LocationPredicate"
-          pattern="${git.clone.javaee.location}/.*"/>
+          pattern="${git.clone.target-platforms.location}/.*"/>
     </workingSet>
   </setupTask>
   <stream name="master"/>
   <logicalProjectContainer
       xsi:type="setup:ProjectCatalog"
       href="index:/org.eclipse.setup#//@projectCatalogs[name='org.eclipse']"/>
-  <description>jbosstools-javaee</description>
+  <description>JBoss Tools Target platforms</description>
 </setup:Project>

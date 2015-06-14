@@ -16,7 +16,7 @@
       id="git.clone.server"
       remoteURI="https://github.com/jbosstools/jbosstools-server.git"
       pushURI="">
-    <description>JBoss Tools Server git repository</description>
+    <description>Server Tools</description>
   </setupTask>
   <setupTask
       xsi:type="setup.targlets:TargletTask">
@@ -24,8 +24,9 @@
         name="jbosstools-server"
         activeRepositoryList="${eclipse.target.platform}">
       <sourceLocator
-          rootFolder="${git.clone.server.location}"
-          locateNestedProjects="true"/>
+          rootFolder="${git.clone.server.location}"/>
+       <projectFactory
+            xsi:type="resources:MavenProjectFactory"/>
       <repositoryList
           name="Mars">
         <repository
@@ -38,8 +39,7 @@
   <setupTask
       xsi:type="setup.workingsets:WorkingSetTask">
     <workingSet
-        name="jbosstools-server"
-        id="">
+        name="jbosstools-server">
       <predicate
           xsi:type="predicates:LocationPredicate"
           pattern="${git.clone.server.location}/.*"/>
@@ -49,5 +49,5 @@
   <logicalProjectContainer
       xsi:type="setup:ProjectCatalog"
       href="index:/org.eclipse.setup#//@projectCatalogs[name='org.eclipse']"/>
-  <description>JBoss Tools Server</description>
+  <description>Server Tools</description>
 </setup:Project>

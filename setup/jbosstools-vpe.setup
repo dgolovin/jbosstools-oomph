@@ -15,15 +15,18 @@
       xsi:type="git:GitCloneTask"
       id="git.clone.vpe"
       remoteURI="https://github.com/jbosstools/jbosstools-vpe.git"
-      pushURI=""/>
+      pushURI="">
+    <description>Visual Page Editor</description>
+  </setupTask>
   <setupTask
       xsi:type="setup.targlets:TargletTask">
     <targlet
         name="jbosstools-vpe"
         activeRepositoryList="${eclipse.target.platform}">
       <sourceLocator
-          rootFolder="${git.clone.vpe.location}"
-          locateNestedProjects="true"/>
+          rootFolder="${git.clone.vpe.location}"/>
+       <projectFactory
+            xsi:type="resources:MavenProjectFactory"/>
       <repositoryList
           name="Mars">
         <repository
@@ -36,8 +39,7 @@
   <setupTask
       xsi:type="setup.workingsets:WorkingSetTask">
     <workingSet
-        name="jbosstools-vpe"
-        id="">
+        name="jbosstools-vpe">
       <predicate
           xsi:type="predicates:LocationPredicate"
           pattern="${git.clone.vpe.location}/.*"/>
@@ -47,5 +49,5 @@
   <logicalProjectContainer
       xsi:type="setup:ProjectCatalog"
       href="index:/org.eclipse.setup#//@projectCatalogs[name='org.eclipse']"/>
-  <description>JBoss Tools VPE Module</description>
+  <description>Visual Page Editor</description>
 </setup:Project>
