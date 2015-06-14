@@ -18,7 +18,6 @@
         name="P2 Snapshots Repositories">
       <setupTask
           xsi:type="setup:VariableTask"
-          id=""
           name="snapshot.url.prefix"
           value="http://download.jboss.org/jbosstools/mars/snapshots/builds"
           defaultValue="">
@@ -43,6 +42,13 @@
           xsi:type="setup:VariableTask"
           name="base.p2repo.url"
           value="${snapshot.url.prefix}/jbosstools-base_${scope.project.stream.name}/latest/all/repo/">
+        <annotation
+            source="http://www.eclipse.org/oomph/setup/GlobalVariable"/>
+      </setupTask>
+      <setupTask
+          xsi:type="setup:VariableTask"
+          name="freemarker.p2repo.url"
+          value="${snapshot.url.prefix}/jbosstools-freemarker_${scope.project.stream.name}/latest/all/repo/">
         <annotation
             source="http://www.eclipse.org/oomph/setup/GlobalVariable"/>
       </setupTask>
@@ -112,7 +118,6 @@
       </setupTask>
       <setupTask
           xsi:type="setup:VariableTask"
-          id=""
           name="thym.p2repo.url"
           value="http://download.jboss.org/jbosstools/updates/requirements/thym/0.3.0-SNAPSHOT-201505011546">
         <annotation
