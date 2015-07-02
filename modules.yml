@@ -1,3 +1,6 @@
+# type - shows type of the project unless different from default which is "eclipse". 
+# p2repo - nightly p2 repository if it is different from default template
+
 
 base:
   module: jbosstools-base
@@ -19,6 +22,7 @@ server:
     - base
 
 portlet:
+  p2repo: http://download.jboss.org/jbosstools/updates/stable/luna/core/portlet/
   dependencies:
     - server
     - javaee
@@ -28,7 +32,7 @@ portlet:
     - vpe
 
 # not included since template assumes things are p2 stuff
-#website:
+# website:
 #  description: tools.jboss.org using Awestruct
 
 openshift:
@@ -43,6 +47,7 @@ livereload:
 
 target-platforms:
   description: JBoss Tools Target platforms
+  type: maven
 
 browsersim:
   dependencies:
@@ -64,6 +69,7 @@ webservices:
 
 locus:
   description: Locus, an orbit for JBoss Tools
+  type: maven
 
 playground:
   description: Playground (not for production)
@@ -72,9 +78,11 @@ thym:
   module: eclipse-thym
   description: Eclipse THyM
   giturl: https://github.com/eclipse/thym.git
+  p2repo: http://download.jboss.org/jbosstools/updates/requirements/thym/0.3.0-SNAPSHOT-201505011546
     
 xulrunner:
   description: JBoss Tools XULRunner
+  p2repo: http://download.jboss.org/jbosstools/updates/requirements/xulrunner-1.9.2/
   dependencies:
     - base
 
@@ -82,17 +90,26 @@ tern:
   module: eclipse-tern
   description: tern for java
   giturl: https://github.com/angelozerr/tern.java.git
+  p2repo: http://download.jboss.org/jbosstools/updates/requirements/tern/0.9.0.201504141710
 
 angularjs:
   module: eclipse-angularjs
   description: angularjs for eclipse
   giturl: https://github.com/angelozerr/angularjs-eclipse.git
+  p2repo: http://download.jboss.org/jbosstools/updates/requirements/angularjs/0.9.0.201504121519
   
 jst:
   dependencies:
     - base
     - tern
     - angularjs
+
+aerogear:
+  dependencies:
+    - base
+    - jst
+    - browsersim
+    - thym
     
 javaee:
   dependencies:

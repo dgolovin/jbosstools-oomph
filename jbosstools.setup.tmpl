@@ -24,126 +24,15 @@
         <annotation
             source="http://www.eclipse.org/oomph/setup/GlobalVariable"/>
       </setupTask>
+	  #for $p2repo in $modulep2repo
       <setupTask
           xsi:type="setup:VariableTask"
-          name="tern.p2repo.url"
-          value="http://download.jboss.org/jbosstools/updates/requirements/tern/0.9.0.201504141710">
+          name="${p2repo.get("modulename","")}.p2repo.url"
+          value="${p2repo.get("modulep2repo","")}">
         <annotation
             source="http://www.eclipse.org/oomph/setup/GlobalVariable"/>
       </setupTask>
-      <setupTask
-          xsi:type="setup:VariableTask"
-          name="angularjs.p2repo.url"
-          value="http://download.jboss.org/jbosstools/updates/requirements/angularjs/0.9.0.201504121519">
-        <annotation
-            source="http://www.eclipse.org/oomph/setup/GlobalVariable"/>
-      </setupTask>
-      <setupTask
-          xsi:type="setup:VariableTask"
-          name="base.p2repo.url"
-          value="\${snapshot.url.prefix}/jbosstools-base_\${scope.project.stream.name}/latest/all/repo/">
-        <annotation
-            source="http://www.eclipse.org/oomph/setup/GlobalVariable"/>
-      </setupTask>
-      <setupTask
-          xsi:type="setup:VariableTask"
-          name="freemarker.p2repo.url"
-          value="\${snapshot.url.prefix}/jbosstools-freemarker_\${scope.project.stream.name}/latest/all/repo/">
-        <annotation
-            source="http://www.eclipse.org/oomph/setup/GlobalVariable"/>
-      </setupTask>
-      <setupTask
-          xsi:type="setup:VariableTask"
-          name="jst.p2repo.url"
-          value="\${snapshot.url.prefix}/jbosstools-jst_\${scope.project.stream.name}/latest/all/repo/">
-        <annotation
-            source="http://www.eclipse.org/oomph/setup/GlobalVariable"/>
-      </setupTask>
-      <setupTask
-          xsi:type="setup:VariableTask"
-          name="hibernate.p2repo.url"
-          value="\${snapshot.url.prefix}/jbosstools-hibernate_\${scope.project.stream.name}/latest/all/repo/">
-        <annotation
-            source="http://www.eclipse.org/oomph/setup/GlobalVariable"/>
-      </setupTask>
-      <setupTask
-          xsi:type="setup:VariableTask"
-          name="server.p2repo.url"
-          value="\${snapshot.url.prefix}/jbosstools-server_\${scope.project.stream.name}/latest/all/repo/">
-        <annotation
-            source="http://www.eclipse.org/oomph/setup/GlobalVariable"/>
-      </setupTask>
-      <setupTask
-          xsi:type="setup:VariableTask"
-          name="vpe.p2repo.url"
-          value="\${snapshot.url.prefix}/jbosstools-vpe_\${scope.project.stream.name}/latest/all/repo/">
-        <annotation
-            source="http://www.eclipse.org/oomph/setup/GlobalVariable"/>
-      </setupTask>
-      <setupTask
-          xsi:type="setup:VariableTask"
-          name="browsersim.p2repo.url"
-          value="\${snapshot.url.prefix}/jbosstools-browsersim_\${scope.project.stream.name}/latest/all/repo/">
-        <annotation
-            source="http://www.eclipse.org/oomph/setup/GlobalVariable"/>
-      </setupTask>
-      <setupTask
-          xsi:type="setup:VariableTask"
-          name="javaee.p2repo.url"
-          value="\${snapshot.url.prefix}/jbosstools-javaee_\${scope.project.stream.name}/latest/all/repo/">
-        <annotation
-            source="http://www.eclipse.org/oomph/setup/GlobalVariable"/>
-      </setupTask>
-      <setupTask
-          xsi:type="setup:VariableTask"
-          name="portlet.p2repo.url"
-          value="http://download.jboss.org/jbosstools/updates/stable/luna/core/portlet/"
-          defaultValue="">
-        <annotation
-            source="http://www.eclipse.org/oomph/setup/GlobalVariable"/>
-      </setupTask>
-      <setupTask
-          xsi:type="setup:VariableTask"
-          name="playground.p2repo.url"
-          value="\${snapshot.url.prefix}/jbosstools-playground_\${scope.project.stream.name}/latest/all/repo">
-        <annotation
-            source="http://www.eclipse.org/oomph/setup/GlobalVariable"/>
-      </setupTask>
-      <setupTask
-          xsi:type="setup:VariableTask"
-          name="xulrunner.p2repo.url"
-          value="http://download.jboss.org/jbosstools/updates/requirements/xulrunner-1.9.2/">
-        <annotation
-            source="http://www.eclipse.org/oomph/setup/GlobalVariable"/>
-      </setupTask>
-      <setupTask
-          xsi:type="setup:VariableTask"
-          name="thym.p2repo.url"
-          value="http://download.jboss.org/jbosstools/updates/requirements/thym/0.3.0-SNAPSHOT-201505011546">
-        <annotation
-            source="http://www.eclipse.org/oomph/setup/GlobalVariable"/>
-      </setupTask>
-      <setupTask
-          xsi:type="setup:VariableTask"
-          name="aerogear.p2repo.url"
-          value="\${snapshot.url.prefix}/jbosstools-aerogear_\${scope.project.stream.name}/latest/all/repo/">
-        <annotation
-            source="http://www.eclipse.org/oomph/setup/GlobalVariable"/>
-      </setupTask>
-      <setupTask
-          xsi:type="setup:VariableTask"
-          name="central.p2repo.url"
-          value="\${snapshot.url.prefix}/jbosstools-central_\${scope.project.stream.name}/latest/all/repo/">
-        <annotation
-            source="http://www.eclipse.org/oomph/setup/GlobalVariable"/>
-      </setupTask>
-      <setupTask
-          xsi:type="setup:VariableTask"
-          name="playground.p2repo.url"
-          value="\${snapshot.url.prefix}/jbosstools-playground_\${scope.project.stream.name}/latest/all/repo/">
-        <annotation
-            source="http://www.eclipse.org/oomph/setup/GlobalVariable"/>
-      </setupTask>
+      #end for
     </setupTask>
     <setupTask
         xsi:type="setup:VariableTask"

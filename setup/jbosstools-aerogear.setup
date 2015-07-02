@@ -10,57 +10,53 @@
     xmlns:setup.targlets="http://www.eclipse.org/oomph/setup/targlets/1.0"
     xmlns:setup.workingsets="http://www.eclipse.org/oomph/setup/workingsets/1.0"
     xsi:schemaLocation="http://www.eclipse.org/oomph/setup/git/1.0 http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/models/Git.ecore http://www.eclipse.org/oomph/predicates/1.0 http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/models/Predicates.ecore http://www.eclipse.org/oomph/resources/1.0 http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/models/Resources.ecore http://www.eclipse.org/oomph/setup/targlets/1.0 http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/models/SetupTarglets.ecore http://www.eclipse.org/oomph/setup/workingsets/1.0 http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/models/SetupWorkingSets.ecore"
-    name="${modulename}"
-    label="${modulelabel}">
+    name="jbosstools-aerogear"
+    label="jbosstools-aerogear">
   <setupTask
       xsi:type="git:GitCloneTask"
-      id="git.clone.${modulesimplename}"
-      remoteURI="${modulegiturl}"
+      id="git.clone.aerogear"
+      remoteURI="https://github.com/jbosstools/jbosstools-aerogear.git"
       pushURI="">
-    <description>${moduledescription}</description>
+    <description>jbosstools-aerogear</description>
   </setupTask>
-  #if $type == "eclipse" 
   <setupTask
       xsi:type="setup.targlets:TargletTask">
     <targlet
-        name="${modulename}"
-        activeRepositoryList="\${eclipse.target.platform}">
+        name="jbosstools-aerogear"
+        activeRepositoryList="${eclipse.target.platform}">
       <sourceLocator
-          rootFolder="${modulegitlocation}" 
+          rootFolder="${git.clone.aerogear.location}" 
           locateNestedProjects="true" >
 	<projectFactory
             xsi:type="resources:MavenProjectFactory"/>
       </sourceLocator>
       <repositoryList
           name="Mars">
-	#for $p2repo in $repositories
         <repository
-            url="${p2repo}"/>
-	#end for
+            url="${aerogear.p2repo.url}"/>
+        <repository
+            url="${base.p2repo.url}"/>
+        <repository
+            url="${jst.p2repo.url}"/>
+        <repository
+            url="${browsersim.p2repo.url}"/>
+        <repository
+            url="${thym.p2repo.url}"/>
       </repositoryList>
     </targlet>
   </setupTask>
-  #end if
   <setupTask
       xsi:type="setup.workingsets:WorkingSetTask">
     <workingSet
-        name="${modulename}">
+        name="jbosstools-aerogear">
       <predicate
           xsi:type="predicates:LocationPredicate"
-          pattern="${modulegitlocation}/.*"/>
+          pattern="${git.clone.aerogear.location}/.*"/>
     </workingSet>
   </setupTask>
-  #if $type == "maven"
-  <setupTask
-      xsi:type="maven:MavenImportTask">
-    <sourceLocator
-        rootFolder="\${git.clone.target-platforms.location}/"
-        locateNestedProjects="true"/>
-  </setupTask>
-  #end if
   <stream name="4.50.x"/>
   <logicalProjectContainer
       xsi:type="setup:ProjectCatalog"
       href="index:/org.eclipse.setup#//@projectCatalogs[name='org.eclipse']"/>
-  <description>${moduledescription}</description>
+  <description>jbosstools-aerogear</description>
 </setup:Project>

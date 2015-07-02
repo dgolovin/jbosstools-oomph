@@ -14,7 +14,7 @@ To use:
 To generate from templates:
 
 ----
-pip install cheetah
+pip install cheetah pyyaml
 python generate-oomph.py
 ----
 
