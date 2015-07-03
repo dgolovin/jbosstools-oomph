@@ -26,29 +26,29 @@
       </setupTask>
       <setupTask
           xsi:type="setup:VariableTask"
-          name="tern.p2repo.url"
-          value="http://download.jboss.org/jbosstools/updates/requirements/tern/0.9.0.201504141710">
+          name="hibernate.p2repo.url"
+          value="${snapshot.url.prefix}/jbosstools-hibernate_${scope.project.stream.name}/latest/all/repo/">
         <annotation
             source="http://www.eclipse.org/oomph/setup/GlobalVariable"/>
       </setupTask>
       <setupTask
           xsi:type="setup:VariableTask"
-          name="angularjs.p2repo.url"
-          value="http://download.jboss.org/jbosstools/updates/requirements/angularjs/0.9.0.201504121519">
+          name="thym.p2repo.url"
+          value="http://download.jboss.org/jbosstools/updates/requirements/thym/0.3.0-SNAPSHOT-201505011546">
         <annotation
             source="http://www.eclipse.org/oomph/setup/GlobalVariable"/>
       </setupTask>
       <setupTask
           xsi:type="setup:VariableTask"
-          name="base.p2repo.url"
-          value="${snapshot.url.prefix}/jbosstools-base_${scope.project.stream.name}/latest/all/repo/">
+          name="livereload.p2repo.url"
+          value="${snapshot.url.prefix}/jbosstools-livereload_${scope.project.stream.name}/latest/all/repo/">
         <annotation
             source="http://www.eclipse.org/oomph/setup/GlobalVariable"/>
       </setupTask>
       <setupTask
           xsi:type="setup:VariableTask"
-          name="freemarker.p2repo.url"
-          value="${snapshot.url.prefix}/jbosstools-freemarker_${scope.project.stream.name}/latest/all/repo/">
+          name="aerogear.p2repo.url"
+          value="${snapshot.url.prefix}/jbosstools-aerogear_${scope.project.stream.name}/latest/all/repo/">
         <annotation
             source="http://www.eclipse.org/oomph/setup/GlobalVariable"/>
       </setupTask>
@@ -61,8 +61,50 @@
       </setupTask>
       <setupTask
           xsi:type="setup:VariableTask"
-          name="hibernate.p2repo.url"
-          value="${snapshot.url.prefix}/jbosstools-hibernate_${scope.project.stream.name}/latest/all/repo/">
+          name="portlet.p2repo.url"
+          value="http://download.jboss.org/jbosstools/updates/stable/luna/core/portlet/">
+        <annotation
+            source="http://www.eclipse.org/oomph/setup/GlobalVariable"/>
+      </setupTask>
+      <setupTask
+          xsi:type="setup:VariableTask"
+          name="angularjs.p2repo.url"
+          value="http://download.jboss.org/jbosstools/updates/requirements/angularjs/0.9.0.201504121519">
+        <annotation
+            source="http://www.eclipse.org/oomph/setup/GlobalVariable"/>
+      </setupTask>
+      <setupTask
+          xsi:type="setup:VariableTask"
+          name="browsersim.p2repo.url"
+          value="${snapshot.url.prefix}/jbosstools-browsersim_${scope.project.stream.name}/latest/all/repo/">
+        <annotation
+            source="http://www.eclipse.org/oomph/setup/GlobalVariable"/>
+      </setupTask>
+      <setupTask
+          xsi:type="setup:VariableTask"
+          name="tern.p2repo.url"
+          value="http://download.jboss.org/jbosstools/updates/requirements/tern/0.9.0.201504141710">
+        <annotation
+            source="http://www.eclipse.org/oomph/setup/GlobalVariable"/>
+      </setupTask>
+      <setupTask
+          xsi:type="setup:VariableTask"
+          name="central.p2repo.url"
+          value="${snapshot.url.prefix}/jbosstools-central_${scope.project.stream.name}/latest/all/repo/">
+        <annotation
+            source="http://www.eclipse.org/oomph/setup/GlobalVariable"/>
+      </setupTask>
+      <setupTask
+          xsi:type="setup:VariableTask"
+          name="freemarker.p2repo.url"
+          value="${snapshot.url.prefix}/jbosstools-freemarker_${scope.project.stream.name}/latest/all/repo/">
+        <annotation
+            source="http://www.eclipse.org/oomph/setup/GlobalVariable"/>
+      </setupTask>
+      <setupTask
+          xsi:type="setup:VariableTask"
+          name="javaee.p2repo.url"
+          value="${snapshot.url.prefix}/jbosstools-javaee_${scope.project.stream.name}/latest/all/repo/">
         <annotation
             source="http://www.eclipse.org/oomph/setup/GlobalVariable"/>
       </setupTask>
@@ -82,30 +124,8 @@
       </setupTask>
       <setupTask
           xsi:type="setup:VariableTask"
-          name="browsersim.p2repo.url"
-          value="${snapshot.url.prefix}/jbosstools-browsersim_${scope.project.stream.name}/latest/all/repo/">
-        <annotation
-            source="http://www.eclipse.org/oomph/setup/GlobalVariable"/>
-      </setupTask>
-      <setupTask
-          xsi:type="setup:VariableTask"
-          name="javaee.p2repo.url"
-          value="${snapshot.url.prefix}/jbosstools-javaee_${scope.project.stream.name}/latest/all/repo/">
-        <annotation
-            source="http://www.eclipse.org/oomph/setup/GlobalVariable"/>
-      </setupTask>
-      <setupTask
-          xsi:type="setup:VariableTask"
-          name="portlet.p2repo.url"
-          value="http://download.jboss.org/jbosstools/updates/stable/luna/core/portlet/"
-          defaultValue="">
-        <annotation
-            source="http://www.eclipse.org/oomph/setup/GlobalVariable"/>
-      </setupTask>
-      <setupTask
-          xsi:type="setup:VariableTask"
-          name="playground.p2repo.url"
-          value="${snapshot.url.prefix}/jbosstools-playground_${scope.project.stream.name}/latest/all/repo">
+          name="base.p2repo.url"
+          value="${snapshot.url.prefix}/jbosstools-base_${scope.project.stream.name}/latest/all/repo/">
         <annotation
             source="http://www.eclipse.org/oomph/setup/GlobalVariable"/>
       </setupTask>
@@ -118,29 +138,29 @@
       </setupTask>
       <setupTask
           xsi:type="setup:VariableTask"
-          name="thym.p2repo.url"
-          value="http://download.jboss.org/jbosstools/updates/requirements/thym/0.3.0-SNAPSHOT-201505011546">
-        <annotation
-            source="http://www.eclipse.org/oomph/setup/GlobalVariable"/>
-      </setupTask>
-      <setupTask
-          xsi:type="setup:VariableTask"
-          name="aerogear.p2repo.url"
-          value="${snapshot.url.prefix}/jbosstools-aerogear_${scope.project.stream.name}/latest/all/repo/">
-        <annotation
-            source="http://www.eclipse.org/oomph/setup/GlobalVariable"/>
-      </setupTask>
-      <setupTask
-          xsi:type="setup:VariableTask"
-          name="central.p2repo.url"
-          value="${snapshot.url.prefix}/jbosstools-central_${scope.project.stream.name}/latest/all/repo/">
-        <annotation
-            source="http://www.eclipse.org/oomph/setup/GlobalVariable"/>
-      </setupTask>
-      <setupTask
-          xsi:type="setup:VariableTask"
           name="playground.p2repo.url"
           value="${snapshot.url.prefix}/jbosstools-playground_${scope.project.stream.name}/latest/all/repo/">
+        <annotation
+            source="http://www.eclipse.org/oomph/setup/GlobalVariable"/>
+      </setupTask>
+      <setupTask
+          xsi:type="setup:VariableTask"
+          name="forge.p2repo.url"
+          value="${snapshot.url.prefix}/jbosstools-forge_${scope.project.stream.name}/latest/all/repo/">
+        <annotation
+            source="http://www.eclipse.org/oomph/setup/GlobalVariable"/>
+      </setupTask>
+      <setupTask
+          xsi:type="setup:VariableTask"
+          name="openshift.p2repo.url"
+          value="${snapshot.url.prefix}/jbosstools-openshift_${scope.project.stream.name}/latest/all/repo/">
+        <annotation
+            source="http://www.eclipse.org/oomph/setup/GlobalVariable"/>
+      </setupTask>
+      <setupTask
+          xsi:type="setup:VariableTask"
+          name="webservices.p2repo.url"
+          value="${snapshot.url.prefix}/jbosstools-webservices_${scope.project.stream.name}/latest/all/repo/">
         <annotation
             source="http://www.eclipse.org/oomph/setup/GlobalVariable"/>
       </setupTask>
@@ -236,11 +256,11 @@
       <repositoryList
           name="Mars">
         <repository
-            url="http://download.jboss.org/jbosstools/updates/requirements/orbit/S20150428165605/"/>
+            url="http://download.jboss.org/jbosstools/updates/requirements/orbit/R20150519210750/"/>
         <repository
-            url="http://download.jboss.org/jbosstools/updates/requirements/tern/0.8.0.201501272018/"/>
+            url="http://download.jboss.org/jbosstools/updates/requirements/tern/0.10.0.201506020610/"/>
         <repository
-            url="https://repository.jboss.org/nexus/content/unzip/unzip/org/jboss/tools/locus/update.site/1.2.0.Final/update.site-1.2.0.Final.zip-unzip/"/>
+            url="http://download.jboss.org/jbosstools/mars/snapshots/builds/jbosstools-locus.site_master/latest/all/repo/"/>
         <repository
             url="http://download.jboss.org/jbosstools/updates/m2e-extensions/m2e-apt/1.1.1-2014-11-26_15-11-10-H37/"/>
         <repository
@@ -250,9 +270,13 @@
         <repository
             url="http://download.jboss.org/jbosstools/updates/requirements/m2eclipse-mavenarchiver/0.17.0.201502101659/"/>
         <repository
-            url="http://download.jboss.org/jbosstools/updates/requirements/mars/201505081000-M7"/>
+            url="http://download.jboss.org/jbosstools/updates/requirements/m2e/1.6.1.20150625-2338/"/>
         <repository
-            url="http://download.jboss.org/jbosstools/updates/requirements/tm/4.0.0.M7_20150429/"/>
+            url="http://download.jboss.org/jbosstools/updates/requirements/mars/201506181000-SR0/"/>
+        <repository
+            url="http://download.jboss.org/jbosstools/updates/requirements/launchbar/1.0.0.201506011405/"/>
+        <repository
+            url="http://download.jboss.org/jbosstools/updates/requirements/tm/4.0.0.RC4/"/>
         <repository
             url="http://download.jboss.org/jbosstools/updates/requirements/jetty/9.2.10.v20150310/"/>
         <repository
@@ -262,37 +286,46 @@
         <repository
             url="http://download.jboss.org/jbosstools/updates/requirements/mars/201506121000-RC4/"/>
         <repository
-            url="http://download.jboss.org/jbosstools/updates/requirements/webtools/S-3.7.0M7-20150505000109/"/>
+            url="http://download.jboss.org/jbosstools/updates/requirements/webtools/R-3.7.0-20150609111814/"/>
         <repository
-            url="http://download.jboss.org/jbosstools/updates/requirements/swtbot/2.2.1/"/>
+            url="http://download.jboss.org/jbosstools/updates/requirements/swtbot/2.3.0/"/>
         <repository
-            url="http://download.jboss.org/jbosstools/updates/requirements/birt/4.5.0.v20150203-1348-M7/"/>
+            url="http://download.jboss.org/jbosstools/updates/requirements/birt/4.5.0.v201506092134/"/>
         <repository
-            url="http://download.jboss.org/jbosstools/updates/requirements/e4.ui/201505051028-SNAPSHOT/"/>
+            url="http://download.jboss.org/jbosstools/updates/requirements/e4.ui/0.1.0.v20150618-1318-SNAPSHOT/"/>
+        <repository
+            url="http://download.jboss.org/jbosstools/updates/requirements/egit/v4.0.0.201506090130-r/"/>
+        <repository
+            url="http://download.jboss.org/jbosstools/updates/requirements/jsdt/3.5.0.v201505071819-SNAPSHOT/"/>
+        <repository
+            url="http://download.jboss.org/jbosstools/updates/requirements/docker/1.0.0.201506102203/"/>
+        <repository
+            url="http://download.eclipse.org/cbi/updates/license/"/>
       </repositoryList>
     </targlet>
   </setupTask>
-        <project href="jbosstools-portlet.setup#/"/>
-        <project href="eclipse-thym.setup#/"/>
-        <project href="jbosstools-livereload.setup#/"/>
-        <project href="jbosstools-target-platforms.setup#/"/>
-        <project href="jbosstools-locus.setup#/"/>
-        <project href="jbosstools-jst.setup#/"/>
-        <project href="jbosstools-base.setup#/"/>
-        <project href="eclipse-angularjs.setup#/"/>
-        <project href="jbosstools-browsersim.setup#/"/>
-        <project href="eclipse-tern.setup#/"/>
-        <project href="jbosstools-central.setup#/"/>
-        <project href="jbosstools-freemarker.setup#/"/>
-        <project href="jbosstools-javaee.setup#/"/>
-        <project href="jbosstools-server.setup#/"/>
-        <project href="jbosstools-vpe.setup#/"/>
-        <project href="jbosstools-xulrunner.setup#/"/>
-        <project href="jbosstools-webservices.setup#/"/>
-        <project href="jbosstools-hibernate.setup#/"/>
-        <project href="jbosstools-forge.setup#/"/>
-        <project href="jbosstools-openshift.setup#/"/>
-        <project href="jbosstools-playground.setup#/"/>
+  <project href="jbosstools-hibernate.setup#/"/>
+  <project href="eclipse-thym.setup#/"/>
+  <project href="jbosstools-livereload.setup#/"/>
+  <project href="jbosstools-aerogear.setup#/"/>
+  <project href="jbosstools-target-platforms.setup#/"/>
+  <project href="jbosstools-locus.setup#/"/>
+  <project href="jbosstools-jst.setup#/"/>
+  <project href="jbosstools-portlet.setup#/"/>
+  <project href="eclipse-angularjs.setup#/"/>
+  <project href="jbosstools-browsersim.setup#/"/>
+  <project href="eclipse-tern.setup#/"/>
+  <project href="jbosstools-central.setup#/"/>
+  <project href="jbosstools-freemarker.setup#/"/>
+  <project href="jbosstools-javaee.setup#/"/>
+  <project href="jbosstools-server.setup#/"/>
+  <project href="jbosstools-vpe.setup#/"/>
+  <project href="jbosstools-base.setup#/"/>
+  <project href="jbosstools-xulrunner.setup#/"/>
+  <project href="jbosstools-playground.setup#/"/>
+  <project href="jbosstools-forge.setup#/"/>
+  <project href="jbosstools-openshift.setup#/"/>
+  <project href="jbosstools-webservices.setup#/"/>
   <logicalProjectContainer
       xsi:type="setup:ProjectCatalog"
       href="index:/org.eclipse.setup#//@projectCatalogs[name='com.github']"/>

@@ -4,6 +4,7 @@
     xmlns:xmi="http://www.omg.org/XMI"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:git="http://www.eclipse.org/oomph/setup/git/1.0"
+    xmlns:maven="http://www.eclipse.org/oomph/setup/maven/1.0"
     xmlns:predicates="http://www.eclipse.org/oomph/predicates/1.0"
     xmlns:resources="http://www.eclipse.org/oomph/resources/1.0"
     xmlns:setup="http://www.eclipse.org/oomph/setup/1.0"
@@ -54,7 +55,7 @@
           pattern="${git.clone.aerogear.location}/.*"/>
     </workingSet>
   </setupTask>
-  <stream name="4.50.x"/>
+  <stream name="master"/>
   <logicalProjectContainer
       xsi:type="setup:ProjectCatalog"
       href="index:/org.eclipse.setup#//@projectCatalogs[name='org.eclipse']"/>

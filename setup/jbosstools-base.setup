@@ -4,6 +4,7 @@
     xmlns:xmi="http://www.omg.org/XMI"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:git="http://www.eclipse.org/oomph/setup/git/1.0"
+    xmlns:maven="http://www.eclipse.org/oomph/setup/maven/1.0"
     xmlns:predicates="http://www.eclipse.org/oomph/predicates/1.0"
     xmlns:resources="http://www.eclipse.org/oomph/resources/1.0"
     xmlns:setup="http://www.eclipse.org/oomph/setup/1.0"
@@ -25,7 +26,8 @@
         name="jbosstools-base"
         activeRepositoryList="${eclipse.target.platform}">
       <sourceLocator
-          rootFolder="${git.clone.base.location}">
+          rootFolder="${git.clone.base.location}" 
+          locateNestedProjects="true" >
 	<projectFactory
             xsi:type="resources:MavenProjectFactory"/>
       </sourceLocator>

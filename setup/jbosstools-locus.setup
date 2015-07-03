@@ -4,6 +4,7 @@
     xmlns:xmi="http://www.omg.org/XMI"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:git="http://www.eclipse.org/oomph/setup/git/1.0"
+    xmlns:maven="http://www.eclipse.org/oomph/setup/maven/1.0"
     xmlns:predicates="http://www.eclipse.org/oomph/predicates/1.0"
     xmlns:resources="http://www.eclipse.org/oomph/resources/1.0"
     xmlns:setup="http://www.eclipse.org/oomph/setup/1.0"
@@ -20,23 +21,6 @@
     <description>Locus, an orbit for JBoss Tools</description>
   </setupTask>
   <setupTask
-      xsi:type="setup.targlets:TargletTask">
-    <targlet
-        name="jbosstools-locus"
-        activeRepositoryList="${eclipse.target.platform}">
-      <sourceLocator
-          rootFolder="${git.clone.locus.location}">
-	<projectFactory
-            xsi:type="resources:MavenProjectFactory"/>
-      </sourceLocator>
-      <repositoryList
-          name="Mars">
-        <repository
-            url="${locus.p2repo.url}"/>
-      </repositoryList>
-    </targlet>
-  </setupTask>
-  <setupTask
       xsi:type="setup.workingsets:WorkingSetTask">
     <workingSet
         name="jbosstools-locus">
@@ -44,6 +28,12 @@
           xsi:type="predicates:LocationPredicate"
           pattern="${git.clone.locus.location}/.*"/>
     </workingSet>
+  </setupTask>
+  <setupTask
+      xsi:type="maven:MavenImportTask">
+    <sourceLocator
+        rootFolder="${git.clone.locus.location}/"
+        locateNestedProjects="true"/>
   </setupTask>
   <stream name="master"/>
   <logicalProjectContainer
