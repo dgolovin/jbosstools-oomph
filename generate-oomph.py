@@ -34,7 +34,8 @@ for name, info in data.items():
                    "moduledescription" : info.get("description", modulename),
                    "modulegitlocation" : "${git.clone." + name + ".location}",
                    "repositories" : repositories,
-                   "type" : info.get("type", "eclipse")
+                   "type" : info.get("type", "eclipse"),
+                   "stream" : info.get("stream", "master")
                  }
              ])
     out = open("setup/" + modulename + ".setup", "w")

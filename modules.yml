@@ -48,6 +48,7 @@ livereload:
 target-platforms:
   description: JBoss Tools Target platforms
   type: maven
+  stream: 4.50.x
 
 browsersim:
   dependencies:
@@ -89,14 +90,16 @@ xulrunner:
 tern:
   module: eclipse-tern
   description: tern for java
-  giturl: https://github.com/angelozerr/tern.java.git
-  p2repo: http://download.jboss.org/jbosstools/updates/requirements/tern/0.9.0.201504141710
+  giturl: https://github.com/dgolovin/tern.java.git
+  p2repo: http://oss.opensagres.fr/tern.repository/0.10.0
+  stream: tern.java-0.10.x
 
 angularjs:
   module: eclipse-angularjs
   description: angularjs for eclipse
-  giturl: https://github.com/angelozerr/angularjs-eclipse.git
-  p2repo: http://download.jboss.org/jbosstools/updates/requirements/angularjs/0.9.0.201504121519
+  giturl: https://github.com/dgolovin/angularjs-eclipse.git
+  p2repo: http://oss.opensagres.fr/angularjs-eclipse/0.10.0/
+  stream: angularjs-eclipse-0.10.x
   
 jst:
   dependencies:

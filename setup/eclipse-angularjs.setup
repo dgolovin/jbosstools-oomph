@@ -16,7 +16,7 @@
   <setupTask
       xsi:type="git:GitCloneTask"
       id="git.clone.angularjs"
-      remoteURI="https://github.com/angelozerr/angularjs-eclipse.git"
+      remoteURI="https://github.com/dgolovin/angularjs-eclipse.git"
       pushURI="">
     <description>angularjs for eclipse</description>
   </setupTask>
@@ -47,7 +47,7 @@
           pattern="${git.clone.angularjs.location}/.*"/>
     </workingSet>
   </setupTask>
-  <stream name="master"/>
+  <stream name="angularjs-eclipse-0.10.x"/>
   <logicalProjectContainer
       xsi:type="setup:ProjectCatalog"
       href="index:/org.eclipse.setup#//@projectCatalogs[name='org.eclipse']"/>

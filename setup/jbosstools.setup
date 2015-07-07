@@ -69,7 +69,7 @@
       <setupTask
           xsi:type="setup:VariableTask"
           name="angularjs.p2repo.url"
-          value="http://download.jboss.org/jbosstools/updates/requirements/angularjs/0.9.0.201504121519">
+          value="http://oss.opensagres.fr/angularjs-eclipse/0.10.0/">
         <annotation
             source="http://www.eclipse.org/oomph/setup/GlobalVariable"/>
       </setupTask>
@@ -83,7 +83,7 @@
       <setupTask
           xsi:type="setup:VariableTask"
           name="tern.p2repo.url"
-          value="http://download.jboss.org/jbosstools/updates/requirements/tern/0.9.0.201504141710">
+          value="http://oss.opensagres.fr/tern.repository/0.10.0">
         <annotation
             source="http://www.eclipse.org/oomph/setup/GlobalVariable"/>
       </setupTask>
@@ -255,12 +255,10 @@
           name="org.eclipse.platform.feature.group"/>
       <repositoryList
           name="Mars">
-        <repository
+       <repository
             url="http://download.jboss.org/jbosstools/updates/requirements/orbit/R20150519210750/"/>
         <repository
-            url="http://download.jboss.org/jbosstools/updates/requirements/tern/0.10.0.201506020610/"/>
-        <repository
-            url="http://download.jboss.org/jbosstools/mars/snapshots/builds/jbosstools-locus.site_master/latest/all/repo/"/>
+            url="https://repository.jboss.org/nexus/content/unzip/unzip/org/jboss/tools/locus/update.site/1.2.0.Final/update.site-1.2.0.Final.zip-unzip/"/>
         <repository
             url="http://download.jboss.org/jbosstools/updates/m2e-extensions/m2e-apt/1.1.1-2014-11-26_15-11-10-H37/"/>
         <repository
@@ -301,31 +299,33 @@
             url="http://download.jboss.org/jbosstools/updates/requirements/docker/1.0.0.201506102203/"/>
         <repository
             url="http://download.eclipse.org/cbi/updates/license/"/>
+        <repository
+        	url="http://download.jboss.org/jbosstools/mars/snapshots/builds/jbosstools-build-sites.aggregate.site_master/latest/all/repo/"/>
       </repositoryList>
     </targlet>
   </setupTask>
-  <project href="jbosstools-hibernate.setup#/"/>
-  <project href="eclipse-thym.setup#/"/>
-  <project href="jbosstools-livereload.setup#/"/>
-  <project href="jbosstools-aerogear.setup#/"/>
-  <project href="jbosstools-target-platforms.setup#/"/>
-  <project href="jbosstools-locus.setup#/"/>
-  <project href="jbosstools-jst.setup#/"/>
-  <project href="jbosstools-portlet.setup#/"/>
-  <project href="eclipse-angularjs.setup#/"/>
-  <project href="jbosstools-browsersim.setup#/"/>
-  <project href="eclipse-tern.setup#/"/>
-  <project href="jbosstools-central.setup#/"/>
-  <project href="jbosstools-freemarker.setup#/"/>
-  <project href="jbosstools-javaee.setup#/"/>
-  <project href="jbosstools-server.setup#/"/>
-  <project href="jbosstools-vpe.setup#/"/>
-  <project href="jbosstools-base.setup#/"/>
-  <project href="jbosstools-xulrunner.setup#/"/>
-  <project href="jbosstools-playground.setup#/"/>
-  <project href="jbosstools-forge.setup#/"/>
-  <project href="jbosstools-openshift.setup#/"/>
-  <project href="jbosstools-webservices.setup#/"/>
+        <project href="jbosstools-hibernate.setup#/"/>
+        <project href="eclipse-thym.setup#/"/>
+        <project href="jbosstools-livereload.setup#/"/>
+        <project href="jbosstools-aerogear.setup#/"/>
+        <project href="jbosstools-target-platforms.setup#/"/>
+        <project href="jbosstools-locus.setup#/"/>
+        <project href="jbosstools-jst.setup#/"/>
+        <project href="jbosstools-portlet.setup#/"/>
+        <project href="eclipse-angularjs.setup#/"/>
+        <project href="jbosstools-browsersim.setup#/"/>
+        <project href="eclipse-tern.setup#/"/>
+        <project href="jbosstools-central.setup#/"/>
+        <project href="jbosstools-freemarker.setup#/"/>
+        <project href="jbosstools-javaee.setup#/"/>
+        <project href="jbosstools-server.setup#/"/>
+        <project href="jbosstools-vpe.setup#/"/>
+        <project href="jbosstools-base.setup#/"/>
+        <project href="jbosstools-xulrunner.setup#/"/>
+        <project href="jbosstools-playground.setup#/"/>
+        <project href="jbosstools-forge.setup#/"/>
+        <project href="jbosstools-openshift.setup#/"/>
+        <project href="jbosstools-webservices.setup#/"/>
   <logicalProjectContainer
       xsi:type="setup:ProjectCatalog"
       href="index:/org.eclipse.setup#//@projectCatalogs[name='com.github']"/>

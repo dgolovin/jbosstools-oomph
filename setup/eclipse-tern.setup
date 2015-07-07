@@ -16,7 +16,7 @@
   <setupTask
       xsi:type="git:GitCloneTask"
       id="git.clone.tern"
-      remoteURI="https://github.com/angelozerr/tern.java.git"
+      remoteURI="https://github.com/dgolovin/tern.java.git"
       pushURI="">
     <description>tern for java</description>
   </setupTask>
@@ -47,7 +47,7 @@
           pattern="${git.clone.tern.location}/.*"/>
     </workingSet>
   </setupTask>
-  <stream name="master"/>
+  <stream name="tern.java-0.10.x"/>
   <logicalProjectContainer
       xsi:type="setup:ProjectCatalog"
       href="index:/org.eclipse.setup#//@projectCatalogs[name='org.eclipse']"/>
