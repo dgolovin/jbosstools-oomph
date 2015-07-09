@@ -6,6 +6,7 @@
     xmlns:git="http://www.eclipse.org/oomph/setup/git/1.0"
     xmlns:maven="http://www.eclipse.org/oomph/setup/maven/1.0"
     xmlns:predicates="http://www.eclipse.org/oomph/predicates/1.0"
+    xmlns:projects="http://www.eclipse.org/oomph/setup/projects/1.0"
     xmlns:resources="http://www.eclipse.org/oomph/resources/1.0"
     xmlns:setup="http://www.eclipse.org/oomph/setup/1.0"
     xmlns:setup.targlets="http://www.eclipse.org/oomph/setup/targlets/1.0"
@@ -18,16 +19,7 @@
       id="git.clone.target-platforms"
       remoteURI="https://github.com/jbosstools/jbosstools-target-platforms.git"
       pushURI="">
-    <description>JBoss Tools Target platforms</description>
-  </setupTask>
-  <setupTask
-      xsi:type="setup.workingsets:WorkingSetTask">
-    <workingSet
-        name="jbosstools-target-platforms">
-      <predicate
-          xsi:type="predicates:LocationPredicate"
-          pattern="${git.clone.target-platforms.location}/.*"/>
-    </workingSet>
+    <description>JBoss Tools Target Platforms</description>
   </setupTask>
   <setupTask
       xsi:type="maven:MavenImportTask">
@@ -35,9 +27,19 @@
         rootFolder="${git.clone.target-platforms.location}/"
         locateNestedProjects="true"/>
   </setupTask>
+  <setupTask
+      xsi:type="setup.workingsets:WorkingSetTask">
+    <workingSet
+        name="jbosstools-target-platforms">
+      <predicate
+          xsi:type="predicates:LocationPredicate"
+          pattern="${git.clone.target-platforms.location}.*"/>
+    </workingSet>
+  </setupTask>
+  
   <stream name="4.50.x"/>
   <logicalProjectContainer
       xsi:type="setup:ProjectCatalog"
       href="index:/org.eclipse.setup#//@projectCatalogs[name='org.eclipse']"/>
-  <description>JBoss Tools Target platforms</description>
+  <description>JBoss Tools Target Platforms</description>
 </setup:Project>

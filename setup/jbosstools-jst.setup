@@ -6,6 +6,7 @@
     xmlns:git="http://www.eclipse.org/oomph/setup/git/1.0"
     xmlns:maven="http://www.eclipse.org/oomph/setup/maven/1.0"
     xmlns:predicates="http://www.eclipse.org/oomph/predicates/1.0"
+    xmlns:projects="http://www.eclipse.org/oomph/setup/projects/1.0"
     xmlns:resources="http://www.eclipse.org/oomph/resources/1.0"
     xmlns:setup="http://www.eclipse.org/oomph/setup/1.0"
     xmlns:setup.targlets="http://www.eclipse.org/oomph/setup/targlets/1.0"
@@ -44,15 +45,37 @@
       </repositoryList>
     </targlet>
   </setupTask>
+   <setupTask
+      xsi:type="projects:ProjectsImportTask">
+    <sourceLocator
+        rootFolder="${git.clone.jst.location}"
+        locateNestedProjects="true">
+      <projectFactory
+            xsi:type="resources:MavenProjectFactory"/>
+      <predicate
+          xsi:type="predicates:OrPredicate">
+        <operand
+            xsi:type="predicates:NaturePredicate"
+            nature="org.eclipse.pde.FeatureNature"/>
+        <operand
+            xsi:type="predicates:NaturePredicate"
+            nature="org.eclipse.pde.PluginNature"/>
+        <operand
+            xsi:type="predicates:LocationPredicate"
+            pattern="${git.clone.jst.location}/site"/>
+      </predicate>
+    </sourceLocator>
+  </setupTask>
   <setupTask
       xsi:type="setup.workingsets:WorkingSetTask">
     <workingSet
         name="jbosstools-jst">
       <predicate
           xsi:type="predicates:LocationPredicate"
-          pattern="${git.clone.jst.location}/.*"/>
+          pattern="${git.clone.jst.location}.*"/>
     </workingSet>
   </setupTask>
+  
   <stream name="master"/>
   <logicalProjectContainer
       xsi:type="setup:ProjectCatalog"

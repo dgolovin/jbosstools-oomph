@@ -1,10 +1,18 @@
 # type - shows type of the project unless different from default which is "eclipse". 
 # p2repo - nightly p2 repository if it is different from default template
+# subodule - piece of sources that have reqular structure features/tests/plugins/itests/docs
 
 
 base:
   module: jbosstools-base
   description: JBoss Tools Base
+  submodules:
+    - common
+    - foundation
+    - runtime 
+    - stacks 
+    - tests 
+    - usage
 
 hibernate:
   description: Hibernate Tools
@@ -20,8 +28,14 @@ server:
   description: Server Tools
   dependencies:
     - base
+  submodules:
+    - archives
+    - as
+    - jmx
+    - wtp
 
 portlet:
+  description: JBoss Tools Portlet Tools
   p2repo: http://download.jboss.org/jbosstools/updates/stable/luna/core/portlet/
   dependencies:
     - server
@@ -35,35 +49,41 @@ portlet:
 # website:
 #  description: tools.jboss.org using Awestruct
 
-openshift:
+openshift: 
+  description: JBoss Tools Openshift Tools 
   dependencies:
     - server
     - base
 
 livereload:
+  description: JBoss Tools Livereload Tools
   dependencies:
     - base
     - server
 
 target-platforms:
-  description: JBoss Tools Target platforms
+  description: JBoss Tools Target Platforms
   type: maven
   stream: 4.50.x
 
 browsersim:
+  description: JBoss Tools Browser Simulator
   dependencies:
     - base
     - jst
 
 forge:
+  description: JBoss Tools Forge Tools 
   dependencies:
     - base
 
 freemarker:
+  description: JBoss Tools Freemarker Template Editor
   dependencies:
     - base
 
 webservices:
+  description: JBoss Tools Webservices Tools
   dependencies:
     - base
     - server
@@ -113,6 +133,10 @@ aerogear:
     - jst
     - browsersim
     - thym
+  submodules:
+    - cordova
+    - cordovasim
+    - feedhenry
     
 javaee:
   dependencies:
@@ -122,6 +146,11 @@ javaee:
     - hibernate
     - jst
     - xulrunner
+  submodules:
+    - batch
+    - cdi
+    - jsf
+    - seam
 
 central:
   dependencies: 
@@ -134,3 +163,9 @@ central:
     - vpe
     - playground
     - thym
+  submodules:
+    - central
+    - discovery
+    - examples
+    - maven
+    
