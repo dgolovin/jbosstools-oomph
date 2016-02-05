@@ -33,6 +33,13 @@
         <repository
             url="${base.p2repo.url}"/>
       </repositoryList>
+      <repositoryList
+          name="Neon">
+        <repository
+            url="${server.p2repo.url}"/>
+        <repository
+            url="${base.p2repo.url}"/>
+      </repositoryList>
     </targlet>
   </setupTask>
   <setupTask
