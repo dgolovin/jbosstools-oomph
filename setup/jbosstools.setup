@@ -261,6 +261,8 @@
           name="Neon">
         <repository
             url="http://download.jboss.org/jbosstools/targetplatforms/jbosstoolstarget/4.60.0.Alpha1-SNAPSHOT/REPO/"/>
+        <repository
+            url="http://download.eclipse.org/releases/neon"/>
       </repositoryList>
     </targlet>
   </setupTask>
