@@ -23,6 +23,9 @@
     <targlet
         name="jbosstools-server"
         activeRepositoryList="${eclipse.target.platform}">
+      <requirement
+          name="org.jboss.ide.eclipse.archives.feature.feature.group"
+          filter=""/>
       <sourceLocator
           rootFolder="${git.clone.server.location}"
           locateNestedProjects="true"/>

@@ -260,9 +260,11 @@
       <repositoryList
           name="Neon">
         <repository
-            url="http://download.jboss.org/jbosstools/targetplatforms/jbosstoolstarget/4.60.0.Alpha1-SNAPSHOT/REPO/"/>
+            url="http://download.jboss.org/jbosstools/targetplatforms/jbosstoolstarget/4.60.0.Alpha1-SNAPSHOT/"/>
         <repository
             url="http://download.eclipse.org/releases/neon"/>
+        <repository
+            url="http://download.eclipse.org/cbi/updates/license"/>
       </repositoryList>
     </targlet>
   </setupTask>
