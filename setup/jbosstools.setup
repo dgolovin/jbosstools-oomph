@@ -20,7 +20,7 @@
           xsi:type="setup:VariableTask"
           id=""
           name="snapshot.url.prefix"
-          value="http://download.jboss.org/jbosstools/mars/snapshots/builds"
+          value="http://download.jboss.org/jbosstools/neon/snapshots/builds"
           defaultValue="">
         <annotation
             source="http://www.eclipse.org/oomph/setup/GlobalVariable"/>
@@ -100,7 +100,8 @@
           xsi:type="setup:VariableTask"
           id=""
           name="thym.p2repo.url"
-          value="http://download.jboss.org/jbosstools/updates/requirements/thym/0.3.0-SNAPSHOT-201505011546">
+          value="http://download.jboss.org/jbosstools/updates/requirements/thym/0.3.0-SNAPSHOT-201509301541/"
+          defaultValue="">
         <annotation
             source="http://www.eclipse.org/oomph/setup/GlobalVariable"/>
       </setupTask>
@@ -140,6 +141,9 @@
       <choice
           value="None"
           label="None"/>
+      <choice
+          value="Neon"
+          label="Neon"/>
       <description>Choose the compatibly level of the target platform</description>
     </setupTask>
   </setupTask>
@@ -253,6 +257,11 @@
       </repositoryList>
       <repositoryList
           name="Luna"/>
+      <repositoryList
+          name="Neon">
+        <repository
+            url="http://download.jboss.org/jbosstools/targetplatforms/jbosstoolstarget/4.60.0.Alpha1-SNAPSHOT/REPO/"/>
+      </repositoryList>
     </targlet>
   </setupTask>
   <project href="jbosstools-build.setup#/"/>
