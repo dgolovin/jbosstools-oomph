@@ -26,6 +26,38 @@
       <requirement
           name="org.jboss.ide.eclipse.archives.feature.feature.group"
           filter=""/>
+      <requirement
+          name="org.jboss.tools.archives.scanner.feature"/>
+      <requirement
+          name="org.jboss.ide.eclipse.archives.test.feature"/>
+      <requirement
+          name="org.jboss.ide.eclipse.archives.feature.source"/>
+      <requirement
+          name="org.jboss.ide.eclipse.archives.test.feature.source"/>
+      <requirement
+          name="org.jboss.tools.archives.scanner.feature.source"/>
+      <requirement
+          name="org.jboss.ide.eclipse.as.feature"/>
+      <requirement
+          name="org.jboss.ide.eclipse.as.test.feature"/>
+      <requirement
+          name="org.jboss.ide.eclipse.as.feature.source"/>
+      <requirement
+          name="org.jboss.ide.eclipse.as.test.feature.source"/>
+      <requirement
+          name="org.jboss.tools.jmx.feature"/>
+      <requirement
+          name="org.jboss.tools.wtp.runtimes.tomcat.feature"/>
+      <requirement
+          name="org.jboss.tools.wtp.runtimes.tomcat.tests.feature"/>
+      <requirement
+          name="org.jboss.tools.wtp.server.launchbar.feature"/>
+      <requirement
+          name="org.jboss.tools.wtp.runtimes.tomcat.feature.source"/>
+      <requirement
+          name="org.jboss.tools.wtp.runtimes.tomcat.feature"/>
+      <requirement
+          name="org.jboss.tools.wtp.server.launchbar.feature.source"/>
       <sourceLocator
           rootFolder="${git.clone.server.location}"
           locateNestedProjects="true"/>
