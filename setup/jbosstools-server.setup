@@ -27,37 +27,48 @@
           name="org.jboss.ide.eclipse.archives.feature.feature.group"
           filter=""/>
       <requirement
-          name="org.jboss.tools.archives.scanner.feature"/>
+          name="org.jboss.tools.archives.scanner.feature.feature.group"/>
       <requirement
-          name="org.jboss.ide.eclipse.archives.test.feature"/>
+          name="org.jboss.ide.eclipse.archives.test.feature.feature.group"
+          filter=""/>
       <requirement
-          name="org.jboss.ide.eclipse.archives.feature.source"/>
+          name="org.jboss.ide.eclipse.archives.feature.source.feature.group"/>
       <requirement
-          name="org.jboss.ide.eclipse.archives.test.feature.source"/>
+          name="org.jboss.ide.eclipse.archives.test.feature.source.feature.group"
+          filter=""/>
       <requirement
-          name="org.jboss.tools.archives.scanner.feature.source"/>
+          name="org.jboss.tools.archives.scanner.feature.source.feature.group"/>
       <requirement
-          name="org.jboss.ide.eclipse.as.feature"/>
+          name="org.jboss.ide.eclipse.as.feature.feature.group"
+          filter=""/>
       <requirement
-          name="org.jboss.ide.eclipse.as.test.feature"/>
+          name="org.jboss.ide.eclipse.as.test.feature.feature.group"
+          filter=""/>
       <requirement
-          name="org.jboss.ide.eclipse.as.feature.source"/>
+          name="org.jboss.ide.eclipse.as.feature.source.feature.group"/>
       <requirement
-          name="org.jboss.ide.eclipse.as.test.feature.source"/>
+          name="org.jboss.ide.eclipse.as.test.feature.source.feature.group"
+          filter=""/>
       <requirement
-          name="org.jboss.tools.jmx.feature"/>
+          name="org.jboss.tools.jmx.feature.feature.group"
+          filter=""/>
       <requirement
-          name="org.jboss.tools.wtp.runtimes.tomcat.feature"/>
+          name="org.jboss.tools.wtp.runtimes.tomcat.feature.feature.group"
+          filter=""/>
       <requirement
-          name="org.jboss.tools.wtp.runtimes.tomcat.tests.feature"/>
+          name="org.jboss.tools.wtp.runtimes.tomcat.tests.feature.feature.group"
+          filter=""/>
       <requirement
-          name="org.jboss.tools.wtp.server.launchbar.feature"/>
+          name="org.jboss.tools.wtp.server.launchbar.feature.feature.group"/>
       <requirement
-          name="org.jboss.tools.wtp.runtimes.tomcat.feature.source"/>
+          name="org.jboss.tools.wtp.runtimes.tomcat.feature.source.feature.group"
+          filter=""/>
       <requirement
-          name="org.jboss.tools.wtp.runtimes.tomcat.feature"/>
+          name="org.jboss.tools.wtp.runtimes.tomcat.feature.feature.group"
+          filter=""/>
       <requirement
-          name="org.jboss.tools.wtp.server.launchbar.feature.source"/>
+          name="org.jboss.tools.wtp.server.launchbar.feature.source.feature.group"
+          filter=""/>
       <sourceLocator
           rootFolder="${git.clone.server.location}"
           locateNestedProjects="true"/>
