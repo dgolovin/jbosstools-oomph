@@ -21,6 +21,17 @@
   </setupTask>
   <setupTask
       xsi:type="setup.targlets:TargletTask">
+    <annotation
+        source="http:/www.eclipse.org/oomph/targlets/PomModulesUpdater">
+      <detail
+          key="location">
+        <value>${git.clone.server.location/as/plugins/pom.xml}</value>
+      </detail>
+      <detail
+          key="moduleRoots">
+        <value>${git.clone.server.location/as/plugins}</value>
+      </detail>
+    </annotation>
     <targlet
         name="jbosstools-server"
         activeRepositoryList="${eclipse.target.platform}">
@@ -63,12 +74,6 @@
           name="org.jboss.tools.wtp.server.launchbar.feature.feature.group"/>
       <requirement
           name="org.jboss.tools.wtp.runtimes.tomcat.feature.source.feature.group"
-          filter=""/>
-      <requirement
-          name="org.jboss.tools.wtp.runtimes.tomcat.feature.feature.group"
-          filter=""/>
-      <requirement
-          name="org.jboss.tools.wtp.server.launchbar.feature.source.feature.group"
           filter=""/>
       <sourceLocator
           rootFolder="${git.clone.server.location}"
